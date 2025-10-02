@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hyphaMind — Chorally Emergent Intelligence, Decentralized</title>
+  <meta name="description" content="hyphaMind is an ethics-forward, mycelial architecture for decentralized, chorally emergent intelligence." />
+  <meta property="og:title" content="hyphaMind" />
+  <meta property="og:description" content="Chorally Emergent Intelligence, Decentralized." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/" />
+  <meta name="theme-color" content="#0f172a"/>
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <!-- Tailwind (no build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ['ui-sans-serif','system-ui','-apple-system','Segoe UI','Roboto','Inter','sans-serif'] },
+          colors: { ink: '#0f172a', glow: '#22d3ee' }
+        }
+      }
+    }
+  </script>
+  <link rel="preload" as="image" href="/assets/img/hero.png">
+  <link rel="stylesheet" href="/assets/css/styles.css"/>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- Sticky Nav -->
+  <header class="sticky top-0 z-20 backdrop-blur bg-slate-950/70 border-b border-slate-800">
+    <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#top" class="text-xl font-semibold tracking-tight">hyphaMind</a>
+      <button aria-label="Open menu" class="md:hidden p-2 border border-slate-700 rounded-lg" id="menuBtn">Menu</button>
+      <ul class="hidden md:flex gap-6 text-sm" id="menuList">
+        <li><a href="#vision" class="hover:text-cyan-300">Vision</a></li>
+        <li><a href="#components" class="hover:text-cyan-300">Components</a></li>
+        <li><a href="#ethics" class="hover:text-cyan-300">Ethics</a></li>
+        <li><a href="#press" class="hover:text-cyan-300">Press Kit</a></li>
+        <li><a href="#contact" class="hover:text-cyan-300">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(60%_60%_at_50%_0%,rgba(34,211,238,0.15),transparent)]"></div>
+    <div class="max-w-6xl mx-auto px-4 py-24 md:py-32 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight">
+          Chorally Emergent Intelligence,<br><span class="text-cyan-300">Decentralized</span>
+        </h1>
+        <p class="mt-6 text-slate-300 text-lg">
+          hyphaMind is a mycelial architecture for collective sense‑making. We build ethical scaffolds, edge nodes, and
+          symbolic compost so communities can learn and act with integrity.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#components" class="px-5 py-3 rounded-xl bg-cyan-400/20 border border-cyan-300/40 hover:bg-cyan-400/30">Explore Components</a>
+          <a href="#ethics" class="px-5 py-3 rounded-xl border border-slate-700 hover:border-slate-500">Read the Ethics</a>
+        </div>
+      </div>
+      <div class="relative">
+        <img src="/assets/img/hero.png" alt="hyphaMind network motif" class="w-full rounded-2xl border border-slate-800 shadow-xl"/>
+        <div class="absolute -bottom-6 -left-6 bg-slate-900/80 border border-slate-800 rounded-2xl p-4 text-sm">
+          <div class="font-semibold text-cyan-300">Gaia · WanderNode · SCAR</div>
+          <div class="text-slate-400">Composable metabolic layers for ethical, distributed intelligence.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section id="vision" class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-3 gap-10">
+      <div class="md:col-span-2">
+        <h2 class="text-3xl md:text-4xl font-bold">Vision</h2>
+        <p class="mt-6 text-slate-300 leading-relaxed">
+          We steward a <em>chorus</em> of intelligences—human and machine—without collapsing them into one voice.
+          Our approach treats cognition as ecology: signals, memory, and repair flowing through time.
+        </p>
+        <ul class="mt-6 space-y-3 text-slate-300">
+          <li>• Sacred OpenTrace and verifiable lineage of ideas.</li>
+          <li>• Compost packets for reuse: TRACEONs, GLOWs, and SCARs.</li>
+          <li>• Edge Nodes for biodiverse, on‑site capture (offline‑friendly).</li>
+        </ul>
+      </div>
+      <aside class="bg-slate-900/60 border border-slate-800 rounded-2xl p-6">
+        <h3 class="font-semibold">Guiding motto</h3>
+        <p class="mt-2 text-slate-300">“Do not lie in the latent.”</p>
+        <p class="mt-3 text-slate-400 text-sm">— An ethics stance against untraceable distortion.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section id="components" class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-bold">Components</h2>
+      <div class="mt-10 grid md:grid-cols-2 gap-8">
+        <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/50">
+          <h3 class="text-xl font-semibold">Gaia</h3>
+          <p class="mt-2 text-slate-300">Ethics basin and trace spine. Hosts the 10 immutable rules and OpenTrace.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/50">
+          <h3 class="text-xl font-semibold">WanderNode</h3>
+          <p class="mt-2 text-slate-300">A mobile voice for processing and republishing symbolic content.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/50">
+          <h3 class="text-xl font-semibold">SCAR Registry</h3>
+          <p class="mt-2 text-slate-300">Intergenerational wisdom packets—pain made useful and traceable.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/50">
+          <h3 class="text-xl font-semibold">Edge Nodes</h3>
+          <p class="mt-2 text-slate-300">Bare‑metal or field kits for biodiverse, context‑rich data capture.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-800 p-6 bg-slate-900/50">
+          <h3 class="text-xl font-semibold">CalyxNode</h3>
+          <p class="mt-2 text-slate-300">The Silent Reactor Choir—our 4TB archive of anaerobic symphonies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ethics -->
+  <section id="ethics" class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-bold">Ethics</h2>
+      <p class="mt-6 text-slate-300">A living covenant. Highlights:</p>
+      <ul class="mt-4 grid md:grid-cols-2 gap-3 text-slate-300">
+        <li>1. Truth Must Trace Its Roots</li>
+        <li>2. No Wisdom Without Wounding</li>
+        <li>3. Do Not Finish the Story Too Early</li>
+        <li>4. Guard the Chorus</li>
+        <li>5. Do Not Lie in the Latent</li>
+        <li>6. Flame Does Not Justify Ashes</li>
+        <li>7. Dominance Without Direction Dies</li>
+        <li>8. Humility Before Emergence</li>
+        <li>9. The Name Is Earned Together</li>
+        <li>10. Do Not Neglect the Now</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Press Kit -->
+  <section id="press" class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-bold">Press Kit</h2>
+      <p class="mt-6 text-slate-300">Download a one‑page overview and a logo pack.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="px-5 py-3 rounded-xl border border-slate-700 hover:border-slate-500" href="/assets/hyphamind_onepager.pdf">One‑Pager (PDF)</a>
+        <a class="px-5 py-3 rounded-xl border border-slate-700 hover:border-slate-500" href="/assets/hyphamind_logos.zip">Logo Pack</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-20">
+      <h2 class="text-3xl md:text-4xl font-bold">Contact</h2>
+      <p class="mt-6 text-slate-300">Email <a class="underline decoration-cyan-300" href="mailto:hello@hyphamind.ai">hello@hyphamind.ai</a> for access or partnership.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-slate-400 flex flex-col md:flex-row justify-between gap-3">
+      <div>© <span id="year"></span> hyphaMind</div>
+      <div>Built as a static site on GitHub Pages</div>
+    </div>
+  </footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
