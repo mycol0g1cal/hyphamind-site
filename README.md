@@ -1,16 +1,39 @@
-# hyphaMind Static Site
+# HyphaMind Site (Jekyll)
 
-A zero-build, GitHub Pages–ready site served from `docs/hyphamind-site/`.
+Static site powered by Jekyll and GitHub Pages.
 
-## Local preview
+## Structure
+
+- `_layouts/default.html` — shared HTML head, navbar, footer
+- `index.md` — homepage content (hero, sections)
+- `about.md`, `mission.md`, `values.md` — simple stubs using the default layout
+- `docs.md`, `examples.md`, `blog.md` — additional stubs; blog lists posts from `_posts/`
+- `community.md` — Community page with a configurable external join link
+- `_posts/` — Jekyll blog posts (a sample post is included)
+- `assets/` — CSS, JS, icons, images
+
+## Local preview (Jekyll)
+
+If you have Ruby and Bundler:
 
 ```bash
-cd docs/hyphamind-site
-python3 -m http.server 9001
-# open http://localhost:9001
+bundle install
+bundle exec jekyll serve --livereload
+# open http://localhost:4000
 ```
 
-## Deployment (GitHub Pages via Actions)
+Alternatively (no Jekyll), you can still spot-check with a static server, but Liquid tags won’t render:
 
-This site is deployed by the `hyphamind-pages.yml` workflow, which uploads `docs/hyphamind-site/` as the Pages artifact and publishes it.
-To redeploy without changes, run the workflow manually from the Actions tab.
+```bash
+python3 -m http.server 9001
+# open http://localhost:9001 (layout variables won’t be processed)
+```
+
+## Deployment
+
+Configured for GitHub Pages via Actions. The workflow builds Jekyll and deploys `_site`.
+Ensure your repository’s Pages settings use “GitHub Actions” as the source.
+Custom domain is defined in `CNAME`.
+
+### Community link
+Set `community_url` in `_config.yml` to your external community (e.g., Discord, Discourse). The navbar includes a primary “Community” button; if `community_url` is blank it falls back to `/community/`.

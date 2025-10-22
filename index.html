@@ -3,210 +3,157 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>HyphaMind</title>
   <meta name="description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
-
-  <!-- ===== Favicon & Social (SLOTS) =====
-       Replace href="" with your actual asset URLs.
-       - /assets/favicon.svg or .ico
-       - /assets/apple-touch-icon.png
-  -->
-  <link rel="icon" href="" />
-  <link rel="apple-touch-icon" href="/assets/icons/halfalogo.svg" />
-  <meta property="og:title" content="HyphaMind" />
-  <meta property="og:description" content="Composting for Cognitive Permaculture and Choral Emergence." />
-  <meta property="og:image" content="/assets/logo.svg" /> <!-- SOCIAL PREVIEW IMAGE SLOT -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
   <meta name="theme-color" content="#2d7f79" />
-
-  <!-- Brand stylesheet from previous message -->
-  <link rel="stylesheet" href="/css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body class="bg-neuro">
-
-  <!-- ================= NAVBAR ================= -->
+  <a class="skip-link" href="#main">Skip to content</a>
   <header class="navbar">
     <div class="inner">
       <a class="brand" href="/">
-        <!-- ===== LOGO SLOT =====
-             Swap src="" for your logo (SVG preferred): /assets/logo.svg
-             Keep the <span class="dot"> for the accent pulse.
-        -->
-        <img src="/assets/logo.svg" alt="HyphaMind logo" style="height:28px;width:auto" />
-        <span>HyphaMind</span><span class="dot">●</span>
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
       </a>
-
       <nav aria-label="primary">
-        <a class="btn btn-outline" href="#mission">Mission</a>
-        <a class="btn btn-outline" href="#pillars">Pillars</a>
-        <a class="btn btn-outline" href="#values">Values</a>
-        <a class="btn btn-primary glow" href="#donate">Donate</a>
+        <a class="btn btn-outline" href="/mission.html">Mission</a>
+        <a class="btn btn-outline" href="/docs.html">Docs</a>
+        <a class="btn btn-outline" href="/examples.html">Examples</a>
+        <a class="btn btn-outline" href="/values.html">Values</a>
+        <a class="btn btn-outline" href="/about.html">About</a>
+        <a class="btn btn-outline" href="/blog.html">Blog</a>
+        <a class="btn btn-primary glow" href="/#donate">Donate</a>
+        <a class="btn btn-outline" href="/community.html">Community</a>
       </nav>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero blob" data-accent="gold">
-    <div class="wrap container">
-      <h1 class="mt-0">HyphaMind</h1>
-      <p class="lead">Composting for <strong>Cognitive Permaculture</strong> and <strong>Choral Emergence</strong>.</p>
-
-      <div class="mt-2">
-        <a class="btn btn-primary glow" href="#usp">See how it works</a>
-        <a class="btn btn-outline" href="#values">Read our values</a>
+  <main id="main" tabindex="-1">
+    <section class="hero blob" data-accent="gold">
+      <div class="wrap container">
+        <h1 class="mt-0">HyphaMind</h1>
+        <p class="lead">Composting for <strong>Cognitive Permaculture</strong> and <strong>Choral Emergence</strong>.</p>
+        <img src="/assets/logo.svg" alt="HyphaMind logo" class="hero-logo" />
+        <div class="mt-2">
+          <a class="btn btn-primary glow" href="#mission">See how it works</a>
+          <a class="btn btn-outline" href="/values.html">Read our values</a>
+        </div>
+        <div class="mt-3" aria-hidden="true"></div>
       </div>
+    </section>
 
-      <!-- ===== FLOURISH/ICON SLOT (HERO) =====
-           Drop subtle nature/tech flourishes here (e.g., a mycelium SVG, leafline, constellation).
-           Example: <img src="/assets/flourishes/leaf-grid.svg" alt="" aria-hidden="true" />
-      -->
-      <img src="/assets/squiggle.svg" alt="" aria-hidden="true" />
-      <div class="mt-3" aria-hidden="true"></div>
-    </div>
-  </section>
+    <div class="section-break"><img src="/assets/icons/line_mycelial.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
 
-  <hr class="vine" />
+    <section id="mission" class="container">
+      <h2 class="mt-0">Mission</h2>
+      <p class="mt-1">We build <strong>audit-ready, reversible AI</strong> that grows like an ecosystem—where <strong>consent is the climate</strong>, <strong>receipts are the growth rings</strong>, and intelligence emerges <strong>chorally</strong> from many small, accountable parts.</p>
+      <h3 class="mt-2 subhead-sm">What we do (in three practices)</h3>
+      <ul>
+        <li><strong>Composting.</strong> We transform messy, risky data into privacy-preserving, provenance-linked artifacts—useful soil instead of hoarded raw inputs.</li>
+        <li><strong>Cognitive Permaculture.</strong> We design for sovereignty and stewardship: consent-first flows, <strong>small replaceable modules</strong>, and <strong>safe-to-change</strong> systems.</li>
+        <li><strong>Choral Emergence.</strong> We coordinate ensembles of narrow models and humans-in-the-loop to produce <strong>explainable, auditable outcomes</strong>—no black boxes.</li>
+      </ul>
+      <h3 class="mt-2 subhead-sm">Why HyphaMind exists</h3>
+      <p>Because <strong>truth must trace its roots</strong>—and because <strong>no wisdom without wounding</strong>. We believe responsible AI should <strong>remember its scars</strong> and show its work. HyphaMind turns compliance into a <strong>compounding trust asset</strong> so organizations and communities can learn together <strong>without surrendering sovereignty</strong>.</p>
+    </section>
 
-  <!-- ================= USP ================= -->
-  <section id="usp" class="container">
-    <div class="card glass">
-      <h2 class="mt-0">Our USP</h2>
-      <p class="mt-1">
-        <em>Software that grows like ecosystems</em>—consent as climate, receipts as growth rings,
-        and reversible change built in.
-      </p>
-    </div>
-  </section>
-
-  <!-- ================= DIFFERENTIATORS ================= -->
-  <section class="container mt-3">
-    <h3 class="mt-0">What makes us different</h3>
-    <div class="mt-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem">
-      <div class="card glass">
-        <h4 class="mt-0">Consent-first networking</h4>
-        <p>Trust edges you can see and control—access is invited, not assumed.</p>
+    <div class="section-break"><img src="/assets/icons/linehexageom.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+    <section id="pillars" class="container">
+      <h2 class="mt-0">Messaging Pillars</h2>
+      <div class="mt-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
+        <article class="card glass" data-accent="teal">
+          <h3 class="mt-0">Your Data, Your Rules</h3>
+          <ul>
+            <li><strong>Trust &amp; Consent.</strong> We ask before we access; you control data, models, and connections.</li>
+            <li><strong>Data Sovereignty.</strong> Use is explicit, revocable, and traceable.</li>
+            <li><strong>Privacy &amp; Security First.</strong> Least-privilege by default, auditable by design.</li>
+          </ul>
+        </article>
+        <article class="card glass" data-accent="gold">
+          <h3 class="mt-0">See Every Step — Receipts by default</h3>
+          <ul>
+            <li><strong>Transparency by Default.</strong> Every action leaves a human-readable, verifiable receipt.</li>
+            <li><strong>Evidence over hype.</strong> Claims come with checks you can run.</li>
+            <li><strong>Revoke-ability.</strong> Undo access, revoke edges, roll back effects.</li>
+          </ul>
+        </article>
+        <article class="card glass" data-accent="amber">
+          <h3 class="mt-0">Human-Centered AI</h3>
+          <ul>
+            <li>Clear boundaries, explainable outcomes, respectful failure modes.</li>
+            <li><strong>Clarity &amp; Craft.</strong> Plain language, crisp promises, high-quality engineering.</li>
+          </ul>
+        </article>
+        <article class="card glass" data-accent="teal">
+          <h3 class="mt-0">Safe to change</h3>
+          <ul>
+            <li><strong>Modular on purpose.</strong> Small, replaceable parts; no lock-in.</li>
+            <li><strong>Reliability &amp; Reversibility.</strong> Work is repeatable, effects reversible, originals preserved.</li>
+          </ul>
+        </article>
       </div>
-      <div class="card glass">
-        <h4 class="mt-0">Receipts on by default</h4>
-        <p>Every step is logged and verifiable—no black boxes.</p>
+    </section>
+
+    <div class="section-break"><img src="/assets/icons/squiggle.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+
+    <section id="what-we-do" class="container">
+      <h2 class="mt-0">What We Do</h2>
+      <div class="what-grid mt-2">
+        <div class="what-item" data-accent="teal">
+          <div class="text">
+            <h3 class="mt-0">AI Engineering</h3>
+            <p>Consent-first models, evaluators, and data pipelines with receipts.</p>
+          </div>
+          <div class="media">
+            <img src="/assets/icons/atom.svg" alt="AI Engineering" />
+          </div>
+        </div>
+        <div class="what-item reverse" data-accent="gold">
+          <div class="text">
+            <h3 class="mt-0">Security &amp; Privacy</h3>
+            <p>Threat modeling, least-privilege architectures, audit trails by default.</p>
+          </div>
+          <div class="media">
+            <img src="/assets/icons/hexabloom.svg" alt="Security &amp; Privacy" />
+          </div>
+        </div>
+        <div class="what-item" data-accent="teal">
+          <div class="text">
+            <h3 class="mt-0">Platform &amp; Infra</h3>
+            <p>Modular, reversible systems—observability, rollbacks, and portability.</p>
+          </div>
+          <div class="media">
+            <img src="/assets/icons/threehexagons.svg" alt="Platform &amp; Infra" />
+          </div>
+        </div>
       </div>
-      <div class="card glass">
-        <h4 class="mt-0">Reversible by design</h4>
-        <p>Change with confidence—rollback, unshare, and revoke are first-class.</p>
+    </section>
+
+    <section id="donate" class="container mt-3">
+      <div class="card glass glow">
+        <h2 class="mt-0">Support the ecosystem</h2>
+        <p>Help us nurture regenerative, consent-first AI.</p>
+        <a class="btn btn-primary" href="" rel="noopener">Become a supporter</a>
+        <small class="mt-1 block">Receipts by default: we publish transparent funding logs.</small>
       </div>
-      <div class="card glass">
-        <h4 class="mt-0">Ethics-anchored, standards-aligned</h4>
-        <p>Security, privacy, and auditability built in—interoperate without lock-in.</p>
-      </div>
-      <div class="card glass">
-        <h4 class="mt-0">Nature-native framing</h4>
-        <p>Cognitive Permaculture patterns—resilient, modular, symbiotic systems.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <hr class="vine" />
+    <div class="section-break"><img src="/assets/icons/squiggle.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
+  </main>
 
-  <!-- ================= MISSION ================= -->
-  <section id="mission" class="container">
-    <h2 class="mt-0">Mission</h2>
-    <p class="mt-1">
-      Build a consent-first, nature-native AI stack where people <strong>own their data</strong>,
-      <strong>every computation leaves a receipt</strong>, and <strong>change is reversible</strong>.
-      We help communities compose intelligence with clear boundaries, traceable truth, and the right to revoke—
-      <em>grounded, mystic, and regenerative by design</em>.
-    </p>
-  </section>
-
-  <hr class="vine" />
-
-  <!-- ================= MESSAGING PILLARS ================= -->
-  <section id="pillars" class="container">
-    <h2 class="mt-0">Messaging Pillars</h2>
-
-    <div class="mt-2" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem">
-      <article class="card glass" data-accent="teal">
-        <h3 class="mt-0">Your Data, Your Rules</h3>
-        <ul>
-          <li><strong>Trust &amp; Consent.</strong> We ask before we access; you control data, models, and connections.</li>
-          <li><strong>Data Sovereignty.</strong> Use is explicit, revocable, and traceable.</li>
-          <li><strong>Privacy &amp; Security First.</strong> Least-privilege by default, auditable by design.</li>
-        </ul>
-      </article>
-
-      <article class="card glass" data-accent="gold">
-        <h3 class="mt-0">See Every Step — Receipts by default</h3>
-        <ul>
-          <li><strong>Transparency by Default.</strong> Every action leaves a human-readable, verifiable receipt.</li>
-          <li><strong>Evidence over hype.</strong> Claims come with checks you can run.</li>
-          <li><strong>Revoke-ability.</strong> Undo access, revoke edges, roll back effects.</li>
-        </ul>
-      </article>
-
-      <article class="card glass" data-accent="amber">
-        <h3 class="mt-0">Human-Centered AI</h3>
-        <ul>
-          <li>Clear boundaries, explainable outcomes, respectful failure modes.</li>
-          <li><strong>Clarity &amp; Craft.</strong> Plain language, crisp promises, high-quality engineering.</li>
-        </ul>
-      </article>
-
-      <article class="card glass">
-        <h3 class="mt-0">Safe to change</h3>
-        <ul>
-          <li><strong>Modular on purpose.</strong> Small, replaceable parts; no lock-in.</li>
-          <li><strong>Reliability &amp; Reversibility.</strong> Work is repeatable, effects reversible, originals preserved.</li>
-        </ul>
-      </article>
-    </div>
-  </section>
-
-  <hr class="vine" />
-
-  <!-- ================= CORE VALUES ================= -->
-  <section id="values" class="container">
-    <h2 class="mt-0">Core Values &amp; Principles</h2>
-    <ul class="mt-1">
-      <li><strong>Consent-first by design</strong></li>
-      <li><strong>Data Sovereignty</strong></li>
-      <li><strong>Truth must trace its roots</strong></li>
-      <li><strong>No Wisdom without wounding</strong></li>
-    </ul>
-  </section>
-
-  <!-- ================= DONATE / SPONSOR ================= -->
-  <section id="donate" class="container mt-3">
-    <div class="card glass glow">
-      <h2 class="mt-0">Support the ecosystem</h2>
-      <p>Help us nurture regenerative, consent-first AI.</p>
-      <!-- ===== DONATION LINK SLOT =====
-           Point this button to GitHub Sponsors, Open Collective, Stripe, etc.
-           Example: href="https://github.com/sponsors/your-org"
-      -->
-      <a class="btn btn-primary" href="" rel="noopener">Become a supporter</a>
-      <small class="mt-1 block">Receipts by default: we publish transparent funding logs.</small>
-    </div>
-  </section>
-
-  <hr class="vine" />
-
-  <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="container">
-      <!-- ===== ICON STRIP SLOT (FOOTER) =====
-           Add subtle iconography / partner marks here.
-           Example: <img src="/assets/icons/mycelium.svg" alt="" aria-hidden="true" />
-      -->
-      <img src="/assets/linehexageom.svg" alt="" aria-hidden="true" />
-      <div class="mb-2" aria-hidden="true"></div>
-
       <p class="mt-1">© <span id="year"></span> HyphaMind. All rights reserved.</p>
     </div>
   </footer>
 
-  <script>
-    // tiny util to keep the year fresh
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

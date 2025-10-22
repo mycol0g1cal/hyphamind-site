@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://hyphamind.ai/</loc><lastmod>2025-10-01</lastmod></url>
+  <url><loc>https://hyphamind.ai/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/about/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/mission/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/values/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/docs/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/examples/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/blog/</loc><lastmod>2025-10-22</lastmod></url>
+  <url><loc>https://hyphamind.ai/community/</loc><lastmod>2025-10-22</lastmod></url>
 </urlset>

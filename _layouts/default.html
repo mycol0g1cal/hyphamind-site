@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" />
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicon.ico' | relative_url }}" />
+  <link rel="mask-icon" href="{{ '/assets/logo.svg' | relative_url }}" color="#2d7f79" />
+  <link rel="canonical" href="{{ page.url | absolute_url }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:title" content="{{ page.title | default: site.title }}" />
+  <meta property="og:description" content="{{ page.description | default: site.description }}" />
+  <meta property="og:image" content="{{ page.og_image | default: '/assets/logo.svg' | relative_url | absolute_url }}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{{ page.title | default: site.title }}" />
+  <meta name="twitter:description" content="{{ page.description | default: site.description }}" />
+  <meta name="twitter:image" content="{{ page.og_image | default: '/assets/logo.svg' | relative_url | absolute_url }}" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/logo.svg' | relative_url }}" alt="HyphaMind logo" />
+        <span>{{ site.title }}</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="{{ '/mission/' | relative_url }}" {% if page.url == '/mission/' %}aria-current="page"{% endif %}>Mission</a>
+        <a class="btn btn-outline" href="{{ '/docs/' | relative_url }}" {% if page.url == '/docs/' %}aria-current="page"{% endif %}>Docs</a>
+        <a class="btn btn-outline" href="{{ '/examples/' | relative_url }}" {% if page.url == '/examples/' %}aria-current="page"{% endif %}>Examples</a>
+        <a class="btn btn-outline" href="{{ '/values/' | relative_url }}" {% if page.url == '/values/' %}aria-current="page"{% endif %}>Values</a>
+        <a class="btn btn-outline" href="{{ '/about/' | relative_url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
+        <a class="btn btn-outline" href="{{ '/blog/' | relative_url }}" {% if page.url == '/blog/' or page.collection == 'posts' %}aria-current="page"{% endif %}>Blog</a>
+        <a class="btn btn-primary glow" href="{{ '/#donate' | relative_url }}">Donate</a>
+        <a class="btn btn-outline" href="{% if site.community_url %}{{ site.community_url }}{% else %}{{ '/community/' | relative_url }}{% endif %}" rel="noopener">Community</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    {{ content }}
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> {{ site.title }}. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

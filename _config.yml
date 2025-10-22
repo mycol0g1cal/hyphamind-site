@@ -1,0 +1,11 @@
+title: HyphaMind
+description: HyphaMind: Composting for Cognitive Permaculture and Choral Emergence.
+url: https://hyphamind.ai
+baseurl: ""
+timezone: UTC
+markdown: kramdown
+theme: null
+plugins: []
+
+# External links
+community_url: https://community.hyphamind.ai
