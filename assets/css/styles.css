@@ -1,6 +1,257 @@
-:root{--ink:#0f172a;--bg:#020617;--line:#1f2937}
-html,body{margin:0;background:#020617;color:#e5e7eb}
-a{color:#67e8f9}
-.notfound{display:grid;place-items:center;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif}
-.notfound main{padding:2rem;text-align:center}
-img{max-width:100%;height:auto}
+/* ===== Brand Base (Micromosaic / HyphaMind) =====
+   Fonts: Headings = Poppins, Body = Inter
+   Colors: #d9a441, #2d7f79, #b56a2d, #ede8d9, #0f1113
+   Suitable for GitHub Pages / static docs
+*/
+
+/* Load webfonts (Google Fonts). Remove if self-hosting. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap");
+
+/* CSS Reset (lightweight) */
+*, *::before, *::after { box-sizing: border-box; }
+html:focus-within { scroll-behavior: smooth; }
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd { margin: 0; }
+ul[role="list"], ol[role="list"] { list-style: none; }
+img, picture, video, canvas, svg { display: block; max-width: 100%; }
+input, button, textarea, select { font: inherit; }
+
+/* ===== Design Tokens ===== */
+:root {
+  /* Brand palette */
+  --brand-gold: #d9a441;
+  --brand-teal: #2d7f79;
+  --brand-amber: #b56a2d;
+  --brand-ivory: #ede8d9;
+  --brand-ink: #0f1113;
+
+  /* Semantic colors (Light) */
+  --bg: var(--brand-ivory);
+  --text: var(--brand-ink);
+  --muted-text: #3a4248;
+  --link: var(--brand-teal);
+  --link-hover: #256a66; /* slightly darker teal */
+  --border: rgba(15, 17, 19, 0.12);
+  --accent: var(--brand-gold);
+  --accent-contrast: #0b0b0c;
+
+  /* Typography */
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-display: "Poppins", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+
+  /* Baseline sizing (rem = root-relative) */
+  --max-width: 72ch;
+  --radius: 14px;
+  --radius-sm: 10px;
+  --shadow: 0 6px 20px rgba(15,17,19,0.08);
+
+  /* Responsive type scale (clamp for GitHub-friendly responsiveness) */
+  --step--1: clamp(0.86rem, 0.83rem + 0.15vw, 0.95rem);  /* small text */
+  --step-0:  clamp(1.00rem, 0.95rem + 0.30vw, 1.10rem);  /* body base */
+  --step-1:  clamp(1.25rem, 1.10rem + 0.80vw, 1.50rem);  /* h6 */
+  --step-2:  clamp(1.44rem, 1.18rem + 1.40vw, 1.80rem);  /* h5 */
+  --step-3:  clamp(1.80rem, 1.30rem + 2.30vw, 2.25rem);  /* h4 */
+  --step-4:  clamp(2.20rem, 1.45rem + 3.30vw, 2.80rem);  /* h3 */
+  --step-5:  clamp(2.60rem, 1.60rem + 4.40vw, 3.40rem);  /* h2 */
+  --step-6:  clamp(3.00rem, 1.80rem + 5.80vw, 4.20rem);  /* h1 */
+}
+
+/* Dark mode tuned to your palette */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--brand-ink);
+    --text: var(--brand-ivory);
+    --muted-text: rgba(237,232,217,0.78);
+    --link: #74c1bb;                 /* teal lifted for contrast */
+    --link-hover: #8bd0ca;
+    --border: rgba(237,232,217,0.14);
+    --accent: var(--brand-gold);
+    --accent-contrast: #121416;
+    --shadow: 0 8px 28px rgba(0,0,0,0.35);
+  }
+}
+
+/* ===== Layout & Body ===== */
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Content container for docs/blog pages */
+.container {
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding: 2rem 1.25rem;
+}
+
+/* ===== Headings ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: 0.005em;
+  color: var(--text);
+  margin: 1.2em 0 0.45em;
+}
+
+h1 { font-size: var(--step-6); font-weight: 800; }
+h2 { font-size: var(--step-5); font-weight: 800; }
+h3 { font-size: var(--step-4); font-weight: 700; }
+h4 { font-size: var(--step-3); font-weight: 700; }
+h5 { font-size: var(--step-2); font-weight: 600; }
+h6 { font-size: var(--step-1); font-weight: 600; text-transform: none; }
+
+/* ===== Text Elements ===== */
+p + p { margin-top: 0.9em; }
+p, li { color: var(--text); }
+small { font-size: var(--step--1); color: var(--muted-text); }
+strong { font-weight: 600; }
+
+a {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--link-hover); }
+
+/* Lists */
+ul, ol { padding-left: 1.25rem; margin: 0.75rem 0; }
+li + li { margin-top: 0.35rem; }
+
+/* Blockquotes */
+blockquote {
+  margin: 1.2rem 0;
+  padding: 1rem 1.2rem;
+  background: linear-gradient(0deg, rgba(0,0,0,0.02), rgba(0,0,0,0.02));
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius-sm);
+  color: var(--muted-text);
+}
+
+/* Code & Pre (for docs) */
+code, pre, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.95em;
+}
+pre {
+  background: rgba(15,17,19,0.06);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  overflow: auto;
+}
+@media (prefers-color-scheme: dark) {
+  pre { background: rgba(237,232,217,0.05); }
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: var(--step--1);
+}
+th, td {
+  border: 1px solid var(--border);
+  padding: 0.65rem 0.75rem;
+}
+th { background: rgba(217,164,65,0.12); text-align: left; }
+
+/* ===== UI Bits for a Simple Marketing/Docs Page ===== */
+.button, .btn {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, color 120ms ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-contrast);
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover { transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--link);
+  border-color: var(--link);
+}
+.btn-outline:hover {
+  color: var(--link-hover);
+  border-color: var(--link-hover);
+  transform: translateY(-1px);
+}
+
+.navbar {
+  border-bottom: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg) 92%, var(--accent) 8%);
+}
+.navbar .inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1.25rem;
+  display: flex; gap: 1rem; align-items: center; justify-content: space-between;
+}
+.brand {
+  display: inline-flex; align-items: baseline; gap: 0.4rem;
+  font-family: var(--font-display); font-weight: 800;
+  color: var(--text);
+  text-decoration: none;
+}
+.brand .dot { color: var(--accent); }
+
+.hero {
+  padding: 3rem 1.25rem 2.25rem;
+  background:
+    radial-gradient(90rem 60rem at 10% -10%, rgba(217,164,65,0.12), transparent 55%),
+    radial-gradient(70rem 50rem at 110% 10%, rgba(45,127,121,0.12), transparent 55%);
+  border-bottom: 1px solid var(--border);
+}
+.hero .wrap { max-width: var(--max-width); margin: 0 auto; }
+.hero h1 { margin-top: 0; }
+.hero p.lead {
+  margin-top: 0.75rem;
+  font-size: clamp(1.05rem, 0.95rem + 0.5vw, 1.25rem);
+  color: var(--muted-text);
+}
+
+.card {
+  background: color-mix(in srgb, var(--bg) 92%, white 8%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.2rem;
+  box-shadow: var(--shadow);
+}
+.card h3 { margin-top: 0.2rem; }
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem 1.25rem;
+  color: var(--muted-text);
+  background: color-mix(in srgb, var(--bg) 94%, black 6%);
+}
+
+/* ===== Utility helpers ===== */
+.mt-0 { margin-top: 0 !important; }
+.mt-1 { margin-top: 0.5rem !important; }
+.mt-2 { margin-top: 1rem !important; }
+.mt-3 { margin-top: 1.5rem !important; }
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: 0.5rem !important; }
+.mb-2 { margin-bottom: 1rem !important; }
+.mb-3 { margin-bottom: 1.5rem !important; }
+.text-center { text-align: center !important; }
+.max { max-width: var(--max-width); margin-inline: auto; }
