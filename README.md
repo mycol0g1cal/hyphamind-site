@@ -7,7 +7,7 @@ Static site powered by Jekyll and GitHub Pages.
 - `_layouts/default.html` — shared HTML head, navbar, footer
 - `index.md` — homepage content (hero, sections)
 - `about.md`, `mission.md`, `values.md` — simple stubs using the default layout
-- `docs.md`, `examples.md`, `blog.md` — additional stubs; blog lists posts from `_posts/`
+- `docs.md`, `nodes.md`, `blog.md` — additional stubs; blog lists posts from `_posts/`
 - `community.md` — Community page with a configurable external join link
 - `_posts/` — Jekyll blog posts (a sample post is included)
 - `assets/` — CSS, JS, icons, images
