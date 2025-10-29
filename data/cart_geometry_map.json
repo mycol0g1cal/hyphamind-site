@@ -1,0 +1,33 @@
+{
+  "run_id": "site-demo-1",
+  "topology_manifest": {
+    "nodes": [
+      {"id": "ROOT"},
+      {"id": "VALVE"},
+      {"id": "CLASP"},
+      {"id": "TRACE"},
+      {"id": "MIRE"},
+      {"id": "SCAR"},
+      {"id": "COMPOST"},
+      {"id": "SPORE"}
+    ],
+    "edges": [
+      {"src": "ROOT", "dst": "VALVE"},
+      {"src": "VALVE", "dst": "CLASP"},
+      {"src": "CLASP", "dst": "TRACE"},
+      {"src": "TRACE", "dst": "MIRE"},
+      {"src": "MIRE", "dst": "SCAR"},
+      {"src": "SCAR", "dst": "COMPOST"},
+      {"src": "COMPOST", "dst": "SPORE"},
+      {"src": "SPORE", "dst": "ROOT"}
+    ]
+  },
+  "metrics": {
+    "semantic_topology_entropy": 0.74
+  },
+  "query": {
+    "evidence_paths": [
+      ["channel:theory", "ROOT", "VALVE", "CLASP", "TRACE", "EYE", "CART", "BARD"]
+    ]
+  }
+}
