@@ -1,7 +1,7 @@
 ---
 layout: default
 title: HyphaMind
-description: HyphaMind: Composting for Cognitive Permaculture and Choral Emergence.
+description: "HyphaMind: Composting for Cognitive Permaculture and Choral Emergence."
 permalink: /
 ---
 
