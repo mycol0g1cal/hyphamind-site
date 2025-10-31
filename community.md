@@ -10,9 +10,10 @@ permalink: /community/
   <p class="mt-1">A mycelial commons for building the Coherence Engine together — slow, sturdy, and consent‑first.</p>
 
   <div class="mt-2">
-    <a class="btn btn-primary glow" href="{{ site.community_url }}" rel="noopener">Join the community</a>
+    <a class="btn btn-primary glow" href="#" aria-disabled="true" role="button">Join the community (coming soon)</a>
     <a class="btn btn-outline" href="{{ '/blog/' | relative_url }}">Read the latest</a>
   </div>
+  <p class="small mt-1">We’re selecting the community venue. Track progress in <a href="https://github.com/mycol0g1cal/hyphamind-site/blob/main/WEBROADMAP.md" rel="noopener">WEBROADMAP.md</a>.</p>
 </section>
 
 <div class="section-break"><img src="{{ '/assets/icons/line_mycelial.svg' | relative_url }}" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
@@ -62,9 +63,10 @@ permalink: /community/
   </ul>
 
   <div class="mt-2">
-    <a class="btn btn-primary" href="{{ site.community_url }}" rel="noopener">Join &amp; introduce yourself</a>
-    <a class="btn btn-outline" href="mailto:community@hyphamind.ai">Email the stewards</a>
+    <a class="btn btn-primary" href="#" aria-disabled="true" role="button">Join &amp; introduce yourself (TBD)</a>
+    <a class="btn btn-outline" href="#" aria-disabled="true" role="button">Email the stewards (TBD)</a>
   </div>
+  <p class="small mt-1">Interim: decisions and tasks live in <a href="https://github.com/mycol0g1cal/hyphamind-site/blob/main/WEBROADMAP.md" rel="noopener">WEBROADMAP.md</a>.</p>
 </section>
 
 <div class="section-break"><img src="{{ '/assets/icons/squiggle.svg' | relative_url }}" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
