@@ -3,6 +3,8 @@ layout: default
 title: About
 description: About HyphaMind — team, ethos, and contact.
 permalink: /about/
+redirect_from:
+  - /about.html
 ---
 
 <section class="container">
@@ -28,4 +30,3 @@ permalink: /about/
   </div>
   <p class="mt-2"><a class="btn btn-outline" href="{{ '/blog/' | relative_url }}">Read the latest</a></p>
 </section>
-

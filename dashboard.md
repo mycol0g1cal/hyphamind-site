@@ -3,6 +3,8 @@ layout: default
 title: Dashboard
 description: Demo consent-first dashboard reading a geometry map.
 permalink: /dashboard/
+redirect_from:
+  - /dashboard.html
 ---
 
 <section class="container">

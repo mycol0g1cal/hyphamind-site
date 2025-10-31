@@ -3,6 +3,8 @@ layout: default
 title: Blog
 description: Updates, deep dives, and announcements from the HyphaMind team.
 permalink: /blog/
+redirect_from:
+  - /blog.html
 ---
 
 <section class="container">
@@ -23,4 +25,3 @@ permalink: /blog/
     <p class="mt-2">No posts yet. Check back soon.</p>
   {% endif %}
 </section>
-

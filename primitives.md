@@ -3,6 +3,8 @@ layout: default
 title: Primitives
 description: Primitive invariants and required spans.
 permalink: /primitives/
+redirect_from:
+  - /primitives.html
 ---
 
 <section class="container">
@@ -29,4 +31,3 @@ permalink: /primitives/
   </div>
   <p class="small">If any primitive misses its required fields, REFRAIN raises a pause, VALVE responds with a refusal code, and SPORE is prevented from exporting the bundle.</p>
 </section>
-

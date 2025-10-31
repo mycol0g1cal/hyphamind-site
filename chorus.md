@@ -3,6 +3,8 @@ layout: default
 title: Chorus
 description: Operational envelope, role metrics, and REFRAIN guard.
 permalink: /chorus/
+redirect_from:
+  - /chorus.html
 ---
 
 <section class="container">
@@ -41,4 +43,3 @@ permalink: /chorus/
     </ul>
   </div>
 </section>
-

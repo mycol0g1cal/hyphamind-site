@@ -3,6 +3,8 @@ layout: default
 title: Telemetry & Consent
 description: Required telemetry span fields and consent receipts.
 permalink: /telemetry-consent/
+redirect_from:
+  - /telemetry-consent.html
 ---
 
 <section class="container">
@@ -34,4 +36,3 @@ permalink: /telemetry-consent/
     <p>Engineers can jump from a dashboard node back to the specific consent envelope and policy decision that authorised it.</p>
   </div>
 </section>
-

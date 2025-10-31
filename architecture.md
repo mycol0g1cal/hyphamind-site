@@ -3,6 +3,8 @@ layout: default
 title: Architecture
 description: Metabolic loop and invariants.
 permalink: /architecture/
+redirect_from:
+  - /architecture.html
 ---
 
 <section class="container">
@@ -45,4 +47,3 @@ permalink: /architecture/
     <li><strong>Loop closure</strong> — ROOT revalidates exported bundles before the run is marked complete.</li>
   </ul>
 </section>
-

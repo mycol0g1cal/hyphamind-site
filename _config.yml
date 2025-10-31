@@ -5,7 +5,8 @@ baseurl: ""
 timezone: UTC
 markdown: kramdown
 theme: null
-plugins: []
+plugins:
+  - jekyll-redirect-from
 
 # External links
 community_url: https://community.hyphamind.ai

@@ -3,6 +3,8 @@ layout: default
 title: Glossary
 description: Engineer‑speak translations for the HyphaMind metabolic loop.
 permalink: /glossary/
+redirect_from:
+  - /glossary.html
 ---
 
 <section class="container">
@@ -30,4 +32,3 @@ permalink: /glossary/
     <dd>Graph of consent‑aware routes. Only SPORE‑vetted nodes may extend it.</dd>
   </dl>
 </section>
-

@@ -3,6 +3,8 @@ layout: default
 title: Web
 description: HyphaMind on the web — community links and programs.
 permalink: /community/
+redirect_from:
+  - /community.html
 ---
 
 <section class="container text-center">

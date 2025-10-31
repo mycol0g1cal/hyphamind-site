@@ -3,6 +3,8 @@ layout: default
 title: Values
 description: HyphaMind’s values and principles.
 permalink: /values/
+redirect_from:
+  - /values.html
 ---
 
 <section class="container">
@@ -14,4 +16,3 @@ permalink: /values/
     <li><strong>No Wisdom without wounding</strong></li>
   </ul>
 </section>
-

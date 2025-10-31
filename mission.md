@@ -3,6 +3,8 @@ layout: default
 title: Mission
 description: HyphaMind mission and practices.
 permalink: /mission/
+redirect_from:
+  - /mission.html
 ---
 
 <section class="container">

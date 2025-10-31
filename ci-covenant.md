@@ -3,6 +3,8 @@ layout: default
 title: CI Covenant
 description: Commit discipline, semantic PRs, and docs CI rituals.
 permalink: /ci-covenant/
+redirect_from:
+  - /ci-covenant.html
 ---
 
 <section class="container">
@@ -15,4 +17,3 @@ permalink: /ci-covenant/
   </ul>
   <p class="mt-2"><a class="btn btn-outline" href="https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/CI_COVENANT.md">Read the vNext CI Covenant</a></p>
 </section>
-

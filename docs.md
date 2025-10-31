@@ -3,6 +3,8 @@ layout: default
 title: Docs
 description: Documentation for HyphaMind — getting started, concepts, and references.
 permalink: /docs/
+redirect_from:
+  - /docs.html
 ---
 
 <section class="container" style="padding-left:1.5rem">

@@ -3,6 +3,8 @@ layout: default
 title: Nodes
 description: HyphaMind Nodes — sovereign, consent-first computation with receipts by default.
 permalink: /nodes/
+redirect_from:
+  - /nodes.html
 ---
 
 <section class="container">
@@ -54,4 +56,3 @@ permalink: /nodes/
     </div>
   </div>
 </section>
-

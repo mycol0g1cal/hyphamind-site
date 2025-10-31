@@ -3,6 +3,8 @@ layout: default
 title: API
 description: Minimal operator-facing API surface with consent receipts.
 permalink: /api/
+redirect_from:
+  - /api.html
 ---
 
 <section class="container">
@@ -67,4 +69,3 @@ permalink: /api/
     <p class="small">VALVE never forwards envelopes without consent receipts or traceability. Public exports also require a valid C2PA manifest, enforcing authenticity at the edge.</p>
   </div>
 </section>
-

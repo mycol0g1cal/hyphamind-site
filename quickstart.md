@@ -3,6 +3,8 @@ layout: default
 title: Quickstart
 description: Minimum viable HyphaMind loop — local smoke lane.
 permalink: /quickstart/
+redirect_from:
+  - /quickstart.html
 ---
 
 <section class="container">
@@ -28,4 +30,3 @@ make chorus-receipts-check</code></pre>
     </ul>
   </div>
 </section>
-
