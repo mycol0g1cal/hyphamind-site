@@ -2,7 +2,7 @@
 ### A Model from HyphaMind’s Conversation (with ROOT)
 
 **HyphaMind Labs**  
-**Version:** 1.4.0‑alpha (“Coherence Engine · Interop”) · **Date:** October 31, 2025
+**Version:** 1.4.0‑alpha (“Coherence Engine”) · **Date:** October 31, 2025
 
 ---
 
@@ -10,7 +10,7 @@
 
 HyphaMind is a consent‑first orchestration spine that turns ethics into runtime capability. It operationalizes symbolic primitives—**ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE**—as enforceable engineering patterns for live systems. **ROOT** anchors identity, scope, and keys; **VALVE/CLASP** gate access under explicit grants; **TRACE/MIRE/SCAR/COMPOST** metabolize action into accountable receipts and repair; **ECHO** listens to the organism’s metabolism for emergent virtues; **SPORE** exports signed, scoped, verifiable bundles.
 
-**New in v1.4.0‑alpha (“Interop”):**  
+**New in v1.4.0‑alpha:**  
 - **Membrane · MCP mode.** A governed plugin membrane that can host *Model Context Protocol (MCP)* servers as first‑class participants under VALVE/CLASP/TRACE, with per‑membrane grants and receipts.  
 - **Receipts profile.** CLASP receipts profiled to **ISO/IEC 27560** (consent record information structure), optionally binding **DPoP (sender‑constrained)** proof to the receipt.  
 - **Exports that travel.** **SPORE** now supports **C2PA Content Credentials (v2.x)** and *Soft Binding* hints so provenance survives platform metadata stripping; supply‑chain attestations may include **SLSA** provenance.  

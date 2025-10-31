@@ -1,5 +1,5 @@
 # HyphaMind Site — Detailed Handoff for Local Coder (Repo: `mycol0g1cal/hyphamind-site`)
-Version: v1.0 · Context locked to Whitepaper SoT: **Coherence Engine · Interop (v1.4.0‑alpha)**
+Version: v1.0 · Context locked to Whitepaper SoT: **Coherence Engine (v1.4.0‑alpha)**
 
 Owner (prose): HyphaEye · Owner (code): Site Coder
 
@@ -63,7 +63,7 @@ whitepaper_url: https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/W
 ```html
 <section class="cta-whitepaper">
   <div class="container">
-    <h2>Coherence Engine · Interop</h2>
+    <h2>Coherence Engine</h2>
     <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
     <a class="btn btn-primary" href="{{ site.whitepaper_url | default: '/whitepaper/' }}">Read the whitepaper</a>
   </div>
@@ -234,7 +234,7 @@ If you prefer on‑site hosting, add `whitepaper.md` and either:
 ```markdown
 ---
 layout: default
-title: Whitepaper — Coherence Engine · Interop
+title: Whitepaper — Coherence Engine
 permalink: /whitepaper/
 ---
 

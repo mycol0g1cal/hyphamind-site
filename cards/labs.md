@@ -11,7 +11,7 @@ HyphaMind Labs is the applied arm of the whitepaper: a place where governance be
 
 ### Current Pilots
 - **Wastewater Intelligence:** provenance-complete sampling → analysis → signed SPORE exports; campus/community dashboards with revocable consent.  
-- **Bio-Digital Interop:** multi-omics vertical linking reactor conditions (pH×T×RT) to proteome/transcriptome/genome with hash-chained spans.  
+- **Bio-Digital:** multi-omics vertical linking reactor conditions (pH×T×RT) to proteome/transcriptome/genome with hash-chained spans.  
 - **Community Consent Tooling:** lightweight CLASP receipts + VALVE policies for neighborhood data collaboratives.
 
 ### Pipeline
