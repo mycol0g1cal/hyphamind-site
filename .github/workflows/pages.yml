@@ -27,6 +27,13 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - name: Generate OG PNG from SVG
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y imagemagick
+          magick convert assets/og-card.svg -resize 1200x630\! assets/og-card.png
+        shell: bash
+
       - name: Build with Jekyll
         run: bundle exec jekyll build --trace
         env:
