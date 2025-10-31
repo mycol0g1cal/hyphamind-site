@@ -7,6 +7,9 @@ markdown: kramdown
 theme: null
 plugins:
   - jekyll-redirect-from
+  
+# Social
+twitter_handle: "@hyphamind_ai"
 
 # External links
 community_url: https://community.hyphamind.ai
