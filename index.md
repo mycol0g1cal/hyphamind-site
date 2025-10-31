@@ -14,8 +14,9 @@ permalink: /
     <p class="loop mt-1"><strong>Our loop:</strong> ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
 
     <div class="mt-2">
-      <a class="btn btn-primary glow" href="{{ site.whitepaper_url | default: '/whitepaper/' }}">Read the whitepaper</a>
+      <a class="btn btn-primary glow" href="{{ '/whitepaper/' | relative_url }}">Read the Whitepaper</a>
       <a class="btn btn-outline" href="{{ '/docs/' | relative_url }}">Explore the docs</a>
+      <a class="btn btn-ghost" href="mailto:mycol0g1cal@hyphamind.ai?subject=LAN%20Federation%20Pilot%20interest">Join a pilot</a>
     </div>
   </div>
 </section>
@@ -56,6 +57,10 @@ permalink: /
       </ul>
     </article>
   </div>
+</section>
+
+<section class="container">
+  <p class="mt-2 small">What’s a SPORE? A SPORE is a portable, signed export bundle (with receipts and provenance) used to exchange auditable artifacts safely across nodes. <a href="{{ '/whitepaper/' | relative_url }}#spore">Learn more</a>.</p>
 </section>
 
 <div class="section-break"><img src="{{ '/assets/icons/linehexageom.svg' | relative_url }}" alt="" aria-hidden="true" loading="lazy" decoding="async" /></div>
