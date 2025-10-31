@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HyphaMind Architecture</title>
+  <link rel="icon" href="assets/img/favicon.ico">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="HyphaMind logo">
+        <span>HyphaMind</span>
+      </a>
+      <p class="tagline">Architecture that keeps ROOT receipts ahead of every reach, with provenance closing the loop.</p>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="quickstart.html">Quickstart</a>
+      <a href="architecture.html" class="active">Architecture</a>
+      <a href="primitives.html">Primitives</a>
+      <a href="chorus.html">Chorus</a>
+      <a href="telemetry-consent.html">Telemetry &amp; Consent</a>
+      <a href="ci-covenant.html">CI Covenant</a>
+      <a href="api.html">API</a>
+      <a href="glossary.html">Glossary</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+  <main class="container">
+    <section class="section">
+      <h1>Metabolic loop overview</h1>
+      <p class="lead">HyphaMind’s metabolic loop enforces consent at each hop. The loop stitches technical enforcement with human-readable receipts so audits are explainable.</p>
+      <pre><code>ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → SPORE → ROOT</code></pre>
+      <p>The loop is intentionally circular. SPORE exports close only when ROOT receipts are still valid and untouched. Every primitive enriches telemetry for the next stage, preventing unauthorised reach.</p>
+    </section>
+
+    <section class="section">
+      <h2>Stage-by-stage commitments</h2>
+      <div class="card" data-accent="teal">
+        <h3>ROOT</h3>
+        <p>The entry point anchors the run with <span class="code-inline">root.digest</span>, grants, and provenance seeds. Nothing else progresses without ROOT in place.</p>
+      </div>
+      <div class="card" data-accent="gold">
+        <h3>VALVE</h3>
+        <p>VALVE evaluates policy, applies refusal codes, and records <span class="code-inline">valve_decision</span> and <span class="code-inline">policy.decision</span>. Denied spans never escape to CLASP.</p>
+      </div>
+      <div class="card" data-accent="amber">
+        <h3>CLASP &amp; TRACE</h3>
+        <p>CLASP packages consent envelopes and maintains <span class="code-inline">consent_envelope_id</span>. TRACE emits spans that must include <span class="code-inline">trace_span_id</span> and root provenance.</p>
+      </div>
+      <div class="card" data-accent="teal">
+        <h3>MIRE &amp; SCAR</h3>
+        <p>MIRE watches entropy and writes events whenever REFRAIN triggers. SCAR stamps compliance markers and ensures denials remain legible.</p>
+      </div>
+      <div class="card" data-accent="gold">
+        <h3>COMPOST &amp; SPORE</h3>
+        <p>COMPOST stores immutable audit artifacts. SPORE exports only bundles that pass the consent policy checks and provenance integrity tests. Optional DPoP protects the edge.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Invariant guardrails</h2>
+      <ul class="checklist">
+        <li><strong>ROOT before reach</strong> &mdash; CLASP and TRACE reject spans without a valid ROOT digest in scope.</li>
+        <li><strong>Refusal clarity</strong> &mdash; VALVE must return human-readable refusal codes whenever policy denies a span.</li>
+        <li><strong>SPORE exports</strong> &mdash; require provenance completion, optional DPoP tokens, and C2PA manifests for public artifacts.</li>
+        <li><strong>Loop closure</strong> &mdash; ROOT revalidates exported bundles before the run is marked complete.</li>
+      </ul>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <strong>HyphaMind</strong>
+      <small>Consent-first orchestration spine for multi-agent systems.</small>
+      <small>&copy; 2024 HyphaMind Collective.</small>
+    </div>
+  </footer>
+</body>
+</html>

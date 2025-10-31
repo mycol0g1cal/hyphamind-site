@@ -5,21 +5,19 @@ description: Documentation for HyphaMind — getting started, concepts, and refe
 permalink: /docs/
 ---
 
-<section class="container">
-  <h1 class="mt-0">Documentation</h1>
-  <p class="mt-1">Start here to understand HyphaMind’s approach and how to work with our systems.</p>
+# Documentation
 
-  <h2 class="mt-2">Getting Started</h2>
-  <p>Installation, setup, and first steps. Replace this with real docs.</p>
+Start here to understand HyphaMind’s approach and how to work with our systems.
 
-  <h2 class="mt-2">Core Concepts</h2>
-  <ul>
-    <li>Consent-first networking</li>
-    <li>Receipts by default</li>
-    <li>Reversible by design</li>
-  </ul>
+## Getting Started
+- Monorepo Quickstart (30 seconds): https://github.com/hyphamind-ai/hyphaMind#start-here-30-seconds
+- Docs vNext Trailhead: https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/README.md
 
-  <h2 class="mt-2">References</h2>
-  <p>API references and guides go here.</p>
-</section>
+## Core Concepts
+- Coherence Engine loop: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → **ECHO** → SPORE
+- Consent-first orchestration and reversible intelligence
+- Receipts and provenance by default
 
+## References
+- Whitepaper (living SoT): {{ site.whitepaper_url | default: '/whitepaper/' }}
+- API & Guides: tracked in the monorepo; public snapshots land here as they stabilize
