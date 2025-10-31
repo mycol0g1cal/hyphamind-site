@@ -46,7 +46,7 @@
       <nav aria-label="primary">
         <a class="btn btn-outline" href="{{ '/docs/' | relative_url }}" {% if page.url == '/docs/' %}aria-current="page"{% endif %}>Docs</a>
         <a class="btn btn-outline" href="{{ '/blog/' | relative_url }}" {% if page.url == '/blog/' or page.collection == 'posts' %}aria-current="page"{% endif %}>Blog</a>
-        <a class="btn btn-outline" href="{% if site.community_url %}{{ site.community_url }}{% else %}{{ '/community/' | relative_url }}{% endif %}" rel="noopener">Web</a>
+        <a class="btn btn-outline" href="{{ '/community/' | relative_url }}" {% if page.url == '/community/' %}aria-current="page"{% endif %}>Web</a>
         <a class="btn btn-primary glow" href="{{ site.whitepaper_url | default: '/whitepaper/' }}">Philosophy</a>
       </nav>
     </div>
