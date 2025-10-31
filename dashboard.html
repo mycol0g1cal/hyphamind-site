@@ -17,16 +17,10 @@
       <p class="tagline">Demo dashboard fed by SPORE-vetted cart geometry. Use it to explore the metabolic loop.</p>
     </div>
     <nav class="site-nav">
-      <a href="index.html">Home</a>
-      <a href="quickstart.html">Quickstart</a>
-      <a href="architecture.html">Architecture</a>
-      <a href="primitives.html">Primitives</a>
-      <a href="chorus.html">Chorus</a>
-      <a href="telemetry-consent.html">Telemetry &amp; Consent</a>
-      <a href="ci-covenant.html">CI Covenant</a>
-      <a href="api.html">API</a>
-      <a href="glossary.html">Glossary</a>
-      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="/docs/">Docs</a>
+      <a href="/blog/">Blog</a>
+      <a href="https://community.hyphamind.ai" rel="noopener">Web</a>
+      <a href="https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/whitepaper_vnext.md">Philosophy</a>
     </nav>
   </header>
   <main class="container">
@@ -65,9 +59,10 @@
     <div class="container">
       <strong>HyphaMind</strong>
       <small>Consent-first orchestration spine for multi-agent systems.</small>
-      <small>&copy; 2024 HyphaMind Collective.</small>
+      <small>&copy; <span id="year"></span> HyphaMind, LLC. Powered by HyphaMind™</small>
     </div>
   </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 
   <script type="application/json" id="fallback-geometry">
   {
