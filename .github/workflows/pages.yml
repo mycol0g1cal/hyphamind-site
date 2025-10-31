@@ -30,8 +30,8 @@ jobs:
       - name: Generate OG PNG from SVG
         run: |
           sudo apt-get update -y
-          sudo apt-get install -y imagemagick
-          convert assets/og-card.svg -resize 1200x630\! assets/og-card.png
+          sudo apt-get install -y librsvg2-bin
+          rsvg-convert assets/og-card.svg -w 1200 -h 630 -o assets/og-card.png
         shell: bash
 
       - name: Build with Jekyll
