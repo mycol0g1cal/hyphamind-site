@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Towards Ethical Human–Machine Co‑Creation</title>
+  <meta name="description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/hyphamind_whitepaper_v1_4_0-alpha.html" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/hyphamind_whitepaper_v1_4_0-alpha.html" />
+  <meta property="og:title" content="Towards Ethical Human–Machine Co‑Creation" />
+  <meta property="og:description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Towards Ethical Human–Machine Co‑Creation" />
+  <meta name="twitter:description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1 id="towards-ethical-humanmachine-cocreation">Towards Ethical Human–Machine Co‑Creation</h1>
+<h3 id="a-model-from-hyphaminds-conversation-with-root">A Model from HyphaMind’s Conversation (with ROOT)</h3>
+
+<p><strong>HyphaMind Labs</strong><br />
+<strong>Version:</strong> 1.4.0‑alpha (“Coherence Engine · Interop”) · <strong>Date:</strong> October 31, 2025</p>
+
+<hr />
+
+<h2 id="abstract">Abstract</h2>
+
+<p>HyphaMind is a consent‑first orchestration spine that turns ethics into runtime capability. It operationalizes symbolic primitives—<strong>ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE</strong>—as enforceable engineering patterns for live systems. <strong>ROOT</strong> anchors identity, scope, and keys; <strong>VALVE/CLASP</strong> gate access under explicit grants; <strong>TRACE/MIRE/SCAR/COMPOST</strong> metabolize action into accountable receipts and repair; <strong>ECHO</strong> listens to the organism’s metabolism for emergent virtues; <strong>SPORE</strong> exports signed, scoped, verifiable bundles.</p>
+
+<p><strong>New in v1.4.0‑alpha (“Interop”):</strong></p>
+<ul>
+  <li><strong>Membrane · MCP mode.</strong> A governed plugin membrane that can host <em>Model Context Protocol (MCP)</em> servers as first‑class participants under VALVE/CLASP/TRACE, with per‑membrane grants and receipts.</li>
+  <li><strong>Receipts profile.</strong> CLASP receipts profiled to <strong>ISO/IEC 27560</strong> (consent record information structure), optionally binding <strong>DPoP (sender‑constrained)</strong> proof to the receipt.</li>
+  <li><strong>Exports that travel.</strong> <strong>SPORE</strong> now supports <strong>C2PA Content Credentials (v2.x)</strong> and <em>Soft Binding</em> hints so provenance survives platform metadata stripping; supply‑chain attestations may include <strong>SLSA</strong> provenance.</li>
+  <li><strong>Telemetry semantics.</strong> OpenTelemetry is the base; adapters for <strong>OpenInference</strong> and <strong>OpenLLMetry</strong> attribute sets are included, while tracking emerging OTel Gen‑AI/Agentic conventions.</li>
+  <li><strong>Truth invariants at runtime.</strong> Omissions of <code class="language-plaintext highlighter-rouge">root.digest</code>, <code class="language-plaintext highlighter-rouge">consent.*</code>, or <code class="language-plaintext highlighter-rouge">policy.decision</code> are <strong>denials</strong>, not warnings, enforced by middleware and CI. <strong>REFRAIN</strong> gains hysteresis and minimum pause to avoid flap.</li>
+  <li><strong>ISO/IEC 42001 curvature.</strong> An appendix maps runtime receipts and SPORE to AI‑management system controls for audit readiness.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Design maxims</strong></p>
+  <ul>
+    <li>“<strong>ROOT before reach. Consent before compute.</strong>”</li>
+    <li>“<strong>Receipts are culture. Exports are promises.</strong>”</li>
+    <li>“<strong>Coherence is capability. Calm is safety.</strong>”</li>
+  </ul>
+</blockquote>
+
+<hr />
+
+<h2 id="1-context--background">1. Context &amp; Background</h2>
+
+<ul>
+  <li><strong>Adoption high, trust brittle.</strong> Agents and tool‑use accelerate value and risk; governance remains largely paper‑based.</li>
+  <li><strong>Runtime ethics gap.</strong> Consent, provenance, reversibility, and repair are often externalized; HyphaMind makes them <strong>first‑class runtime behaviors</strong>.</li>
+  <li><strong>Interoperability pressure.</strong> Cross‑tool ecosystems (incl. MCP) demand governed boundaries, not ad‑hoc adapters.</li>
+</ul>
+
+<hr />
+
+<h2 id="2-the-hyphamind-framework-with-echo">2. The HyphaMind Framework (with ECHO)</h2>
+
+<p><strong>Loop:</strong></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE
+</code></pre></div></div>
+
+<ul>
+  <li><strong>ROOT (Anchor).</strong> Identity, keys, scope, intention. No act without a signed anchor.</li>
+  <li><strong>VALVE (Gate).</strong> Enforce allow/deny at boundaries; require purpose and <strong>grants</strong>.</li>
+  <li><strong>CLASP (Consent Handshake).</strong> ODRL‑flavored envelope; receipts use ISO/IEC 27560 profile (see §6). Optional <strong>DPoP</strong> binding at edges.</li>
+  <li><strong>TRACE (Provenance).</strong> Span JSONL + determinism manifests + hash‑chain; required attributes below.</li>
+  <li><strong>MIRE (Reflexive Telemetry).</strong> Reflection markers; REFRAIN can pause flows.</li>
+  <li><strong>SCAR (Repair Markers).</strong> Post‑incident annotations; tombstones; expiry decisions.</li>
+  <li><strong>COMPOST (Archival Digestion).</strong> Batch digestion, review packs, dedupe, metrics.</li>
+  <li><strong>ECHO (Virtue Listener).</strong> Read‑only miner of <strong>beneficial spandrels</strong> from MIRE→SCAR→COMPOST; emits trait events and a quarterly steward note.</li>
+  <li><strong>SPORE (Export).</strong> Signed, scoped bundles with receipts, chain proofs, optional Content Credentials.</li>
+</ul>
+
+<blockquote>
+  <p><strong>Required span attributes (v1.4):</strong><br />
+<code class="language-plaintext highlighter-rouge">root.digest</code>, <code class="language-plaintext highlighter-rouge">purpose.of.use</code>, <code class="language-plaintext highlighter-rouge">consent.digest</code>, <code class="language-plaintext highlighter-rouge">consent.version</code>, <code class="language-plaintext highlighter-rouge">consent.envelope_id</code>,<br />
+<code class="language-plaintext highlighter-rouge">policy.decision</code>, <code class="language-plaintext highlighter-rouge">valve_decision</code>, <code class="language-plaintext highlighter-rouge">refusal.code?</code>, <code class="language-plaintext highlighter-rouge">grants.network[]</code>,<br />
+<code class="language-plaintext highlighter-rouge">membrane.id?</code>, <code class="language-plaintext highlighter-rouge">chorus.facet?</code>, <code class="language-plaintext highlighter-rouge">hash.prev</code>, <code class="language-plaintext highlighter-rouge">hash.self</code>.</p>
+</blockquote>
+
+<p><strong>ROOT card (sketch):</strong></p>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"$schema"</span><span class="p">:</span><span class="s2">"https://schema.hyphamind.org/root/0.1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"urn:root:sha256:…"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"did"</span><span class="p">:</span><span class="s2">"did:example:operator123"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"role"</span><span class="p">:</span><span class="s2">"operator|agent|flow"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scope"</span><span class="p">:{</span><span class="nl">"site"</span><span class="p">:</span><span class="s2">"wetland-07"</span><span class="p">,</span><span class="nl">"env"</span><span class="p">:</span><span class="s2">"edgebox-a2"</span><span class="p">,</span><span class="nl">"when"</span><span class="p">:{</span><span class="nl">"from"</span><span class="p">:</span><span class="s2">"2025-10-01"</span><span class="p">,</span><span class="nl">"to"</span><span class="p">:</span><span class="s2">"2026-01-31"</span><span class="p">}},</span><span class="w">
+  </span><span class="nl">"intention"</span><span class="p">:</span><span class="s2">"repair|research|ops"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"keys"</span><span class="p">:[{</span><span class="nl">"kid"</span><span class="p">:</span><span class="s2">"did:example:key1"</span><span class="p">,</span><span class="nl">"alg"</span><span class="p">:</span><span class="s2">"ed25519"</span><span class="p">}],</span><span class="w">
+  </span><span class="nl">"rotation"</span><span class="p">:{</span><span class="nl">"cadence"</span><span class="p">:</span><span class="s2">"quarterly"</span><span class="p">,</span><span class="nl">"prev_kid"</span><span class="p">:</span><span class="s2">"did:example:key0"</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"signatures"</span><span class="p">:[{</span><span class="nl">"alg"</span><span class="p">:</span><span class="s2">"ed25519"</span><span class="p">,</span><span class="nl">"kid"</span><span class="p">:</span><span class="s2">"did:example:key1"</span><span class="p">,</span><span class="nl">"sig"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<hr />
+
+<h2 id="3-experimental-exchange-method">3. Experimental Exchange (method)</h2>
+<p>Repository‑grounded claims; explicit SLOs; reproducible artifacts; live span validators; money/trading sandbox lane; zero background tasks.</p>
+
+<hr />
+
+<h2 id="4-findings-slos--comparative-posture">4. Findings (SLOs + comparative posture)</h2>
+
+<h3 id="41-design-findings">4.1 Design findings</h3>
+<ul>
+  <li><strong>Truth as invariant.</strong> Denials on provenance/consent omissions reduce audit ambiguity.</li>
+  <li><strong>Edge consent works.</strong> Envelopes + DPoP optionality make consent auditable and replay‑resistant.</li>
+  <li><strong>Sidecars clarify.</strong> Determinism manifests + chain proofs = faster incident/time‑to‑audit.</li>
+  <li><strong>ECHO adds retained learning.</strong> Success‑mining complements incident learning and avoids monoculture via <code class="language-plaintext highlighter-rouge">virtue_entropy</code>.</li>
+</ul>
+
+<h3 id="42-slos-operational">4.2 SLOs (operational)</h3>
+<p>| Metric | Definition | Target |
+|—|—|—|
+| <strong>Policy Decision Latency</strong> | envelope accepted → <code class="language-plaintext highlighter-rouge">policy.decision</code> written | P95 ≤ 150 ms |
+| <strong>Consent‑Receipt Coverage</strong> | % actions with envelope digest + receipt stored | ≥ 99% |
+| <strong>Provenance Continuity</strong> | % cross‑membrane spans with intact hash‑chain | 100% |
+| <strong>Export Integrity</strong> | % SPORE bundles with verified chain + signatures | 100% |
+| <strong>Denial Clarity</strong> | % denials with actionable <code class="language-plaintext highlighter-rouge">refusal.code</code> | ≥ 95% |
+| <strong>ROOT Presence</strong> | % spans with valid <code class="language-plaintext highlighter-rouge">root.digest</code> | 100% |
+| <strong>Coherence Drift</strong> | ECE/Brier delta vs baseline per membrane | ≤ 0.02 @P95 |
+| <strong>Phase‑Lock Time</strong> | REFRAIN → stable resume | ≤ 2 min |
+| <strong>Calm‑Budget Adherence</strong> | % ops within SONG budgets | ≥ 98% |
+| <strong>ECHO Hygiene</strong> | % trait events with resolvable provenance links | 100% |</p>
+
+<hr />
+
+<h2 id="5-technical-architecture-selected">5. Technical Architecture (selected)</h2>
+
+<h3 id="51-valveclasp-guard">5.1 VALVE/CLASP Guard</h3>
+<ul>
+  <li>Middleware performs policy preflight; sets <code class="language-plaintext highlighter-rouge">valve_decision</code> / <code class="language-plaintext highlighter-rouge">refusal.code</code>; <strong>denies</strong> on missing grants or truth‑invariant violations.</li>
+  <li>Deny → 403 or 429 (REFRAIN) with refusal code; span recorded with <code class="language-plaintext highlighter-rouge">policy.decision</code>.</li>
+</ul>
+
+<h3 id="52-plugin-membrane-governed-interop">5.2 Plugin Membrane (governed interop)</h3>
+<ul>
+  <li><strong>Membrane card</strong> declares participants, grants, expiry, signatures.</li>
+  <li><strong>Telemetry extension:</strong> add <code class="language-plaintext highlighter-rouge">membrane.id</code> (digest of card) and <code class="language-plaintext highlighter-rouge">chorus.facet</code> to spans.</li>
+  <li><strong>Modes:</strong>
+    <ul>
+      <li><strong>Native:</strong> first‑party adapters run within grants.</li>
+      <li><strong>MCP:</strong> the membrane hosts an MCP client; each server call runs inside grants; emits ISO‑27560 receipt; optional DPoP binding at the edge.</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Membrane card (sketch):</strong></p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">$schema</span><span class="pi">:</span> <span class="s">https://schema.hyphamind.org/membrane/0.1</span>
+<span class="na">participants</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">did:example:human123</span>
+    <span class="na">facet</span><span class="pi">:</span> <span class="s">STORM</span>
+  <span class="pi">-</span> <span class="na">id</span><span class="pi">:</span> <span class="s">did:example:agent456</span>
+    <span class="na">facet</span><span class="pi">:</span> <span class="s">EYE</span>
+<span class="na">grants</span><span class="pi">:</span>
+  <span class="na">network</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">protocol</span><span class="pi">:</span> <span class="s">https</span>
+      <span class="na">host</span><span class="pi">:</span> <span class="s">api.thirdparty.io</span>
+      <span class="na">method</span><span class="pi">:</span> <span class="s">POST</span>
+      <span class="na">path_prefix</span><span class="pi">:</span> <span class="s">/v1</span>
+<span class="na">functions</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">summarize</span><span class="pi">,</span> <span class="nv">classify</span><span class="pi">]</span>
+<span class="na">mode</span><span class="pi">:</span> <span class="s">native|mcp</span>
+<span class="na">expiry</span><span class="pi">:</span> <span class="s">2026-01-31T00:00:00Z</span>
+<span class="na">signatures</span><span class="pi">:</span> <span class="pi">[</span> <span class="nv">…</span> <span class="pi">]</span>
+</code></pre></div></div>
+
+<p><strong>Membrane SLOs:</strong> Join latency ≤ 200 ms · Cross‑facet trace integrity 100% · REFRAIN fidelity ≥ 99% · Facet consensus gain ≥ 0.</p>
+
+<h3 id="53-observability--semantics">5.3 Observability &amp; Semantics</h3>
+<ul>
+  <li><strong>Base:</strong> OpenTelemetry traces + logs; JSONL spans in <code class="language-plaintext highlighter-rouge">artifacts/</code>.</li>
+  <li><strong>Adapters:</strong> OpenInference, OpenLLMetry attributes supported.</li>
+  <li><strong>Privacy:</strong> payload sampling off by default for guarded content; attributes only unless <code class="language-plaintext highlighter-rouge">safe_sample=true</code>.</li>
+</ul>
+
+<h3 id="54-refrain--song-calm-budgets">5.4 REFRAIN &amp; SONG (calm budgets)</h3>
+<ul>
+  <li>REFRAIN hysteresis per membrane: <code class="language-plaintext highlighter-rouge">ece_enter=0.08</code>, <code class="language-plaintext highlighter-rouge">ece_exit=0.06</code>, <code class="language-plaintext highlighter-rouge">min_pause=90s</code>; writes <code class="language-plaintext highlighter-rouge">mire_event.json</code>.</li>
+  <li>SONG applies rate/volume budgets per <code class="language-plaintext highlighter-rouge">chorus.facet</code>; violations return 429 with <code class="language-plaintext highlighter-rouge">Retry‑After</code>.</li>
+</ul>
+
+<hr />
+
+<h2 id="6-receipts--standards-clasp-profile">6. Receipts &amp; Standards (CLASP profile)</h2>
+
+<ul>
+  <li><strong>Receipt structure:</strong> ISO/IEC 27560 fields (Header, Processing, Parties, Events).</li>
+  <li><strong>Linkage:</strong> receipts reference <code class="language-plaintext highlighter-rouge">consent.envelope_id</code> and <code class="language-plaintext highlighter-rouge">request_id</code>; spans carry corresponding <code class="language-plaintext highlighter-rouge">consent.*</code>.</li>
+  <li><strong>Proof:</strong> optional DPoP thumbprint (<code class="language-plaintext highlighter-rouge">pop.jkt</code>) and rule identifiers (<code class="language-plaintext highlighter-rouge">policy.rule_ids[]</code>).</li>
+  <li><strong>Coverage:</strong> CI target ≥ 99% receipt coverage for guarded acts.</li>
+</ul>
+
+<hr />
+
+<h2 id="7-exports-spore-signed-scoped-portable">7. Exports: SPORE (signed, scoped, portable)</h2>
+
+<ul>
+  <li><strong>Contents:</strong> receipts, policy snapshot, determinism manifest, provenance chain, optional <strong>ECHO</strong> (<code class="language-plaintext highlighter-rouge">latent_traits.json</code>, <code class="language-plaintext highlighter-rouge">quarterly_report.md</code>).</li>
+  <li><strong>Integrity:</strong> signed bundle; <code class="language-plaintext highlighter-rouge">spore_verify</code> reconstructs hash‑links and validates <code class="language-plaintext highlighter-rouge">membrane.id</code> continuity; fail on gaps without tombstones.</li>
+  <li><strong>Content Credentials:</strong> optional <strong>C2PA</strong> manifest; for public‑web portability include <strong>Soft Binding</strong> hints and/or a Resolution endpoint.</li>
+  <li><strong>Supply chain:</strong> may embed <strong>SLSA</strong> attestations for build/release provenance.</li>
+  <li><strong>Redaction:</strong> permissible for sensitive topology; include a <code class="language-plaintext highlighter-rouge">redaction_note</code> per artifact.</li>
+</ul>
+
+<hr />
+
+<h2 id="8-ethical-design-principles-extended">8. Ethical Design Principles (extended)</h2>
+
+<p>1) <strong>Freely given, purpose‑bound consent</strong> (CLASP) with revocation and expiry.<br />
+2) <strong>Attribution by design</strong> (ROOT) across spans and exports.<br />
+3) <strong>Reversibility &amp; receipts</strong> (ISO 27560) with tombstones and quarantine on revocation.<br />
+4) <strong>Least privilege</strong> (VALVE) for network, tools, and functions.<br />
+5) <strong>Traceability &amp; calibration</strong> (TRACE/MIRE) with REFRAIN gates.<br />
+6) <strong>Truth invariants</strong>: provenance/consent/refusal cannot be elided.<br />
+7) <strong>Creativity via containment</strong>: exploration inside reversible bounds; calm over surge.<br />
+8) <strong>Learn from what goes right</strong>: ECHO formalizes <strong>Safety‑II</strong> and <strong>Positive Deviance</strong> at runtime.</p>
+
+<hr />
+
+<h2 id="9-implementation-path-now--next--later">9. Implementation Path (Now / Next / Later)</h2>
+
+<p><strong>NOW (1–2 sprints)</strong></p>
+<ul>
+  <li>Valve‑guard middleware with <strong>deny‑on‑missing‑grant</strong>; refusal codes taxonomy.</li>
+  <li>CLASP receipts (ISO‑27560 profile) + <code class="language-plaintext highlighter-rouge">make consent-check</code> (≥ 99%).</li>
+  <li>REFRAIN gate (hysteresis) + SONG budgets.</li>
+  <li>Span‑validator v1.1: require <code class="language-plaintext highlighter-rouge">root.digest</code>, <code class="language-plaintext highlighter-rouge">policy.decision</code>, <code class="language-plaintext highlighter-rouge">grants.network[]</code>; require <code class="language-plaintext highlighter-rouge">membrane.*</code> on plugin routes.</li>
+</ul>
+
+<p><strong>NEXT (this quarter)</strong></p>
+<ul>
+  <li>Plugin membrane <strong>MCP mode</strong>; DPoP on edges; <code class="language-plaintext highlighter-rouge">membrane.id</code> &amp; <code class="language-plaintext highlighter-rouge">chorus.facet</code> stamping.</li>
+  <li>SPORE <strong>pack/verify</strong> with C2PA option + Soft Binding hints.</li>
+  <li>ECHO v0.1: rolling 28‑day window, 7‑day cool‑down; quarterly steward note.</li>
+</ul>
+
+<p><strong>LATER (hardening)</strong></p>
+<ul>
+  <li>ISO/IEC <strong>42001</strong> alignment kit; NIST RMF cross‑walk; healthcare/newsroom pilots.</li>
+  <li>SLSA provenance templates; richer policy authoring (OPA + optional Cedar adapter).</li>
+</ul>
+
+<hr />
+
+<h2 id="10-toward-general-coherence">10. Toward General Coherence</h2>
+
+<p>HyphaMind optimizes for <strong>general coherence</strong>—truthful, ethical, high‑signal collaboration in motion—rather than mere capacity. Coherence is maintained through <strong>truth invariants</strong>, <strong>membrane‑bounded consent</strong>, <strong>REFRAIN</strong> for safe pauses, and <strong>ECHO</strong> for positive anomaly retention.</p>
+
+<p><strong>Guard (pseudocode):</strong></p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">required</span> <span class="o">=</span> <span class="p">[</span><span class="s">"root.digest"</span><span class="p">,</span><span class="s">"consent.digest"</span><span class="p">,</span><span class="s">"policy.decision"</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">span</span><span class="p">[</span><span class="s">"attributes"</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">required</span><span class="p">):</span>
+    <span class="n">deny</span><span class="p">(</span><span class="n">refusal_code</span><span class="o">=</span><span class="s">"E-TRUTH-INVARIANT"</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">breach</span><span class="p">(</span><span class="n">calibration</span><span class="p">.</span><span class="n">ece</span><span class="p">,</span> <span class="n">enter</span><span class="o">=</span><span class="mf">0.08</span><span class="p">,</span> <span class="nb">exit</span><span class="o">=</span><span class="mf">0.06</span><span class="p">):</span>
+    <span class="n">refrain_pause</span><span class="p">(</span><span class="n">refusal_code</span><span class="o">=</span><span class="s">"E-REFRAIN"</span><span class="p">,</span> <span class="n">min_pause</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="appendix--integrated-implementation-notes">Appendix — Integrated Implementation Notes</h2>
+
+<h3 id="a-repository-mapping-selected">A. Repository mapping (selected)</h3>
+<p>| Concept | Code / Docs (suggested) | Notes |
+|—|—|—|
+| ROOT | <code class="language-plaintext highlighter-rouge">schema/root.schema.json</code>; <code class="language-plaintext highlighter-rouge">tools/hm-root</code> | generator/rotation; validator on <code class="language-plaintext highlighter-rouge">root.digest</code> |
+| Guard/Policy/Consent | <code class="language-plaintext highlighter-rouge">nodes_guard.py</code>, <code class="language-plaintext highlighter-rouge">nodes_gate.py</code>, <code class="language-plaintext highlighter-rouge">tools/validate_odrl_envelope.py</code> | VALVE allow/deny; refusal codes |
+| Observability | <code class="language-plaintext highlighter-rouge">nodes_metrics.py</code> → <code class="language-plaintext highlighter-rouge">spans.jsonl</code>; <code class="language-plaintext highlighter-rouge">provenance_chain.py</code> | required span fields + hash‑chain |
+| Membrane | <code class="language-plaintext highlighter-rouge">schema/membrane.schema.yaml</code>; <code class="language-plaintext highlighter-rouge">services/membrane_manager.py</code> | card parsing; stamping <code class="language-plaintext highlighter-rouge">membrane.*</code> |
+| MCP Bridge | <code class="language-plaintext highlighter-rouge">services/membrane_mcp.py</code> | governed interop client |
+| Receipts | <code class="language-plaintext highlighter-rouge">docs/schemas/receipt.27560.json</code>; <code class="language-plaintext highlighter-rouge">tools/receipt_emit.py</code> | ISO‑profiled receipts |
+| REFRAIN/SONG | <code class="language-plaintext highlighter-rouge">services/refrain_middleware.py</code>; <code class="language-plaintext highlighter-rouge">policy/song_budgets.yaml</code> | thresholds + budgets |
+| ECHO | <code class="language-plaintext highlighter-rouge">tools/echo_listener.py</code>; <code class="language-plaintext highlighter-rouge">policy/echo_config.yaml</code>; <code class="language-plaintext highlighter-rouge">artifacts/echo/</code> | trait mining; append‑only |
+| SPORE | <code class="language-plaintext highlighter-rouge">tools/spore_pack.py</code>; <code class="language-plaintext highlighter-rouge">tools/spore_verify.py</code>; <code class="language-plaintext highlighter-rouge">docs/Guides/SPORE.md</code> | chain proof; C2PA option |
+| Policy Engines | <code class="language-plaintext highlighter-rouge">policy/opa/*.rego</code>; <code class="language-plaintext highlighter-rouge">policy/cedar/*.cedar</code> | OPA default; Cedar optional |</p>
+
+<h3 id="b-telemetry--receipts--schema-sketch">B. Telemetry &amp; receipts — schema sketch</h3>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w"> </span><span class="nl">"version"</span><span class="p">:</span><span class="s2">"hm.telemetry.v1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"span"</span><span class="p">:{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="nl">"ts"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"attributes"</span><span class="p">:{</span><span class="w">
+      </span><span class="nl">"root.digest"</span><span class="p">:</span><span class="s2">"sha256:…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"purpose.of.use"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"consent.digest"</span><span class="p">:</span><span class="s2">"sha256:…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"consent.version"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"consent.envelope_id"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"policy.decision"</span><span class="p">:</span><span class="s2">"allow|deny|expired|tombstoned"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"valve_decision"</span><span class="p">:</span><span class="s2">"allow|deny"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"refusal.code"</span><span class="p">:</span><span class="s2">"E-…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"grants.network"</span><span class="p">:[{</span><span class="nl">"protocol"</span><span class="p">:</span><span class="s2">"https"</span><span class="p">,</span><span class="nl">"host"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="nl">"method"</span><span class="p">:</span><span class="s2">"GET"</span><span class="p">,</span><span class="nl">"path_prefix"</span><span class="p">:</span><span class="s2">"/v1"</span><span class="p">}],</span><span class="w">
+      </span><span class="nl">"membrane.id"</span><span class="p">:</span><span class="s2">"urn:membrane:sha256:…"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"chorus.facet"</span><span class="p">:</span><span class="s2">"STORM|EYE|CART|BARD|SONG"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"hash"</span><span class="p">:{</span><span class="nl">"prev"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="nl">"self"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"receipts"</span><span class="p">:[{</span><span class="nl">"format"</span><span class="p">:</span><span class="s2">"iso-iec-27560"</span><span class="p">,</span><span class="nl">"controller"</span><span class="p">:</span><span class="s2">"HyphaMind Labs"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"purpose"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">,</span><span class="nl">"status"</span><span class="p">:</span><span class="s2">"active|revoked|expired"</span><span class="p">,</span><span class="w">
+               </span><span class="nl">"proof"</span><span class="p">:{</span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"sigstore"</span><span class="p">,</span><span class="nl">"dpop"</span><span class="p">:{</span><span class="nl">"jkt"</span><span class="p">:</span><span class="s2">"…"</span><span class="p">}}}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h3 id="c-ci-covenant-excerpt">C. CI covenant (excerpt)</h3>
+<p>1) <code class="language-plaintext highlighter-rouge">make smoke</code> → check ROOT/VALVE/TRACE/REFRAIN basics on tiny dataset.<br />
+2) <code class="language-plaintext highlighter-rouge">make check-truth</code> → deny on missing invariants; ensure refusal codes present.<br />
+3) <code class="language-plaintext highlighter-rouge">make consent-check</code> → ≥ 99% receipt coverage.<br />
+4) <code class="language-plaintext highlighter-rouge">make membrane-check</code> → continuity of <code class="language-plaintext highlighter-rouge">membrane.id</code> across plugin spans.<br />
+5) <code class="language-plaintext highlighter-rouge">make spore-smoke &amp;&amp; spore-verify</code> → chain proof &amp; optional C2PA manifest integrity.</p>
+
+<h3 id="d-refusal-codes-canonical">D. Refusal codes (canonical)</h3>
+<p><code class="language-plaintext highlighter-rouge">E-TRUTH-INVARIANT</code>, <code class="language-plaintext highlighter-rouge">E-MISSING-GRANT</code>, <code class="language-plaintext highlighter-rouge">E-REFRAIN</code>, <code class="language-plaintext highlighter-rouge">E-CHAIN-BROKEN</code>, <code class="language-plaintext highlighter-rouge">E-SPORE-REDACT-NOTE</code></p>
+
+<h3 id="e-retention-windows-defaults">E. Retention windows (defaults)</h3>
+<p><code class="language-plaintext highlighter-rouge">spans.jsonl</code> hot 180d / cold 2y; <code class="language-plaintext highlighter-rouge">receipts</code> 7y; <code class="language-plaintext highlighter-rouge">echo/*</code> 2y; <code class="language-plaintext highlighter-rouge">spore/*</code> 7y.</p>
+
+<h3 id="f-standards-crosswalk-pointer-list">F. Standards crosswalk (pointer list)</h3>
+<ul>
+  <li>ISO/IEC 27560 (consent receipts) · ISO/IEC 42001 (AI management)</li>
+  <li>C2PA (Content Credentials; Soft Binding) · SLSA (supply‑chain)</li>
+  <li>ODRL (policy envelope) · OPA/Rego, optional Cedar (policy engines)</li>
+  <li>OpenTelemetry + OpenInference/OpenLLMetry (observability)</li>
+</ul>
+
+<blockquote>
+  <p><strong>Pull‑quote</strong><br />
+“<strong>ROOT before reach.</strong> If we can attribute, we can consent; if we can consent, we can repair; if we can repair, we can grow—quietly, coherently.”</p>
+</blockquote>
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

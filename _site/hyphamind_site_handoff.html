@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>HyphaMind Site — Detailed Handoff for Local Coder (Repo: mycol0g1cal/hyphamind-site)</title>
+  <meta name="description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/hyphamind_site_handoff.html" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/hyphamind_site_handoff.html" />
+  <meta property="og:title" content="HyphaMind Site — Detailed Handoff for Local Coder (Repo: mycol0g1cal/hyphamind-site)" />
+  <meta property="og:description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HyphaMind Site — Detailed Handoff for Local Coder (Repo: mycol0g1cal/hyphamind-site)" />
+  <meta name="twitter:description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1 id="hyphamind-site--detailed-handoff-for-local-coder-repo-mycol0g1calhyphamind-site">HyphaMind Site — Detailed Handoff for Local Coder (Repo: <code class="language-plaintext highlighter-rouge">mycol0g1cal/hyphamind-site</code>)</h1>
+<p>Version: v1.0 · Context locked to Whitepaper SoT: <strong>Coherence Engine · Interop (v1.4.0‑alpha)</strong></p>
+
+<p>Owner (prose): HyphaEye · Owner (code): Site Coder</p>
+
+<hr />
+
+<h2 id="0-mission-of-this-pass">0) Mission of this pass</h2>
+<p>Bring the public website into <strong>explicit alignment</strong> with the whitepaper SoT and the monorepo’s vNext narrative. This is a <em>lightweight, surgical</em> content + layout pass (no framework changes).</p>
+
+<p><strong>Results after this PR:</strong></p>
+<ul>
+  <li>Homepage hero and sections speak the <strong>Coherence Engine</strong> idiom and include <strong>ECHO</strong> in the loop.</li>
+  <li>A visible <strong>Whitepaper CTA</strong> routes users to the SoT.</li>
+  <li>Four ready “cards” (About Founder, Personal Ethos, Labs, Contact) are live.</li>
+  <li>Navigation exposes Docs, Blog, Community, and Whitepaper.</li>
+  <li>Jekyll remains stock; GitHub Pages Action continues unmodified.</li>
+</ul>
+
+<hr />
+
+<h2 id="1-local-dev-workflow-confirm">1) Local dev workflow (confirm)</h2>
+<p>Use Bundler/Jekyll for full rendering (Liquid), or a static server for very rough checks.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Full (recommended)</span>
+bundle <span class="nb">install
+</span>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span>
+<span class="c"># open http://localhost:4000</span>
+
+<span class="c"># Quick static preview (Liquid not processed)</span>
+python3 <span class="nt">-m</span> http.server 9001
+<span class="c"># open http://localhost:9001</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="2-config-touchups--_configyml">2) Config touch‑ups — <code class="language-plaintext highlighter-rouge">_config.yml</code></h2>
+<p>Add/site‑wide variables for convenience and make sure the basics are correct.</p>
+
+<ul>
+  <li>Verify <code class="language-plaintext highlighter-rouge">title</code>, <code class="language-plaintext highlighter-rouge">description</code>, and <code class="language-plaintext highlighter-rouge">url</code> are correct for the public domain.</li>
+  <li>Ensure <code class="language-plaintext highlighter-rouge">community_url</code> is populated (navbar uses it).</li>
+  <li>Add a new key <code class="language-plaintext highlighter-rouge">whitepaper_url</code> that points to the canonical SoT (GitHub blob URL or a docs page you’ll add).</li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">title</span><span class="pi">:</span> <span class="s">HyphaMind</span>
+<span class="na">description</span><span class="pi">:</span> <span class="na">HyphaMind</span><span class="pi">:</span> <span class="s">Composting for Cognitive Permaculture and Choral Emergence.</span>
+<span class="na">url</span><span class="pi">:</span> <span class="s">https://hyphamind.ai</span>
+<span class="na">baseurl</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+
+<span class="c1"># External links</span>
+<span class="na">community_url</span><span class="pi">:</span> <span class="s">https://community.hyphamind.ai</span>
+
+<span class="c1"># New: Whitepaper SoT link</span>
+<span class="na">whitepaper_url</span><span class="pi">:</span> <span class="s">https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/WHITEPAPER.md</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>If you provide a <code class="language-plaintext highlighter-rouge">/whitepaper/</code> page in this repo, update <code class="language-plaintext highlighter-rouge">whitepaper_url</code> to the site path instead.</p>
+</blockquote>
+
+<hr />
+
+<h2 id="3-create-a-simple-whitepaper-cta-include">3) Create a simple Whitepaper CTA include</h2>
+<p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">_includes/whitepaper_cta.html</code></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"cta-whitepaper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Coherence Engine · Interop<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <span class="nt">&lt;strong&gt;</span>ECHO<span class="nt">&lt;/strong&gt;</span> → SPORE.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">href=</span><span class="s">"https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md"</span><span class="nt">&gt;</span>Read the whitepaper<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;style&gt;</span>
+<span class="nc">.cta-whitepaper</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">2.5rem</span> <span class="m">0</span><span class="p">;</span> <span class="nl">border-top</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span> <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cta-whitepaper</span> <span class="nc">.btn</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">0.6rem</span> <span class="m">1rem</span><span class="p">;</span> <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#222</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="4-layout-inject-cta-and-improve-navbar">4) Layout: inject CTA and improve navbar</h2>
+<p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">_layouts/default.html</code></p>
+
+<ul>
+  <li>Add a <strong>Whitepaper</strong> link in the navbar.</li>
+  <li>Include the CTA above the footer (or directly under hero on the homepage if you prefer).</li>
+</ul>
+
+<p>Minimal diff (illustrative — integrate into your existing HTML carefully):</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- inside &lt;nav&gt; ... --&gt;</span>
+<span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Home<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/docs/"</span><span class="nt">&gt;</span>Docs<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"/blog/"</span><span class="nt">&gt;</span>Blog<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://community.hyphamind.ai"</span><span class="nt">&gt;</span>Community<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md"</span><span class="nt">&gt;</span>Whitepaper<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="c">&lt;!-- near footer: --&gt;</span>
+<span class="nt">&lt;section</span> <span class="na">class=</span><span class="s">"cta-whitepaper"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h2&gt;</span>Coherence Engine · Interop<span class="nt">&lt;/h2&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <span class="nt">&lt;strong&gt;</span>ECHO<span class="nt">&lt;/strong&gt;</span> → SPORE.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">href=</span><span class="s">"https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md"</span><span class="nt">&gt;</span>Read the whitepaper<span class="nt">&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/section&gt;</span>
+
+<span class="nt">&lt;style&gt;</span>
+<span class="nc">.cta-whitepaper</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">2.5rem</span> <span class="m">0</span><span class="p">;</span> <span class="nl">border-top</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span> <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cta-whitepaper</span> <span class="nc">.btn</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">0.6rem</span> <span class="m">1rem</span><span class="p">;</span> <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#222</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+</code></pre></div></div>
+
+<p>Optional: add simple OpenGraph tags in <code class="language-plaintext highlighter-rouge">&lt;head&gt;</code>:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"HyphaMind Site — Detailed Handoff for Local Coder (Repo: mycol0g1cal/hyphamind-site)"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"HyphaMind: Composting for Cognitive Permaculture and Choral Emergence."</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"https://hyphamind.ai/hyphamind_site_handoff.html"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"website"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"icon"</span> <span class="na">href=</span><span class="s">"/assets/favicon.ico"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="5-homepage-content--indexmd">5) Homepage content — <code class="language-plaintext highlighter-rouge">index.md</code></h2>
+<p>Update hero and surface the new language (ECHO, Coherence Engine).</p>
+
+<p>Front‑matter stays minimal:</p>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">HyphaMind</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Coherence Engine for consent‑first orchestration.</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<p>Replace/augment body with:</p>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># HyphaMind — Coherence Engine for accountable intelligence</span>
+
+We grow intelligence as soil. We tune for repair, reversibility, and reciprocal flourishing — not extraction.
+
+<span class="gs">**Our loop:**</span> ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <span class="gs">**ECHO**</span> → SPORE.
+<span class="p">
+-</span> Consent‑first orchestration (VALVE/CLASP)
+<span class="p">-</span> Receipts and provenance by default (TRACE/COMPOST)
+<span class="p">-</span> Reflexive learning from lived practice (ECHO)
+<span class="p">-</span> Portable exports with attribution (SPORE)
+
+<span class="p">[</span><span class="nv">Read the Whitepaper →</span><span class="p">](</span><span class="sx">https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md</span><span class="p">)</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="6-docs-landing--docsmd-light-pass">6) Docs landing — <code class="language-plaintext highlighter-rouge">docs.md</code> (light pass)</h2>
+<p>Swap placeholders for real anchors into the monorepo docs or site‑local pages you control.</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Docs</span>
+<span class="na">description</span><span class="pi">:</span> <span class="s">Documentation for HyphaMind — getting started, concepts, and references.</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/docs/</span>
+<span class="nn">---</span>
+
+<span class="gh"># Documentation</span>
+
+Start here to understand HyphaMind’s approach and how to work with our systems.
+
+<span class="gu">## Getting Started</span>
+<span class="p">-</span> Monorepo Quickstart: https://github.com/hyphamind-ai/hyphaMind#start-here-30-seconds
+<span class="p">-</span> Docs vNext Trailhead: https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/README.md
+
+<span class="gu">## Core Concepts</span>
+<span class="p">-</span> Coherence Engine loop: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <span class="gs">**ECHO**</span> → SPORE
+<span class="p">-</span> Consent‑first networking; receipts by default; reversibility by design
+
+<span class="gu">## References</span>
+<span class="p">-</span> API &amp; Guides live in the monorepo (stable links above). Public module snapshots will be mirrored here as they stabilize.
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="7-cards-collection-new-lightweight-layout">7) Cards collection (new lightweight layout)</h2>
+<p>Create a simple layout for card‑style pages.</p>
+
+<p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">_layouts/card.html</code></p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!doctype html&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;title&gt;</span>HyphaMind Site — Detailed Handoff for Local Coder (Repo: mycol0g1cal/hyphamind-site) · HyphaMind<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"HyphaMind: Composting for Cognitive Permaculture and Choral Emergence."</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/site.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+  <span class="nt">&lt;main</span> <span class="na">class=</span><span class="s">"container card"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1&gt;</span>HyphaMind Site — Detailed Handoff for Local Coder (Repo: mycol0g1cal/hyphamind-site)<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"summary"</span><span class="nt">&gt;&lt;/p&gt;</span>
+    <span class="nt">&lt;article</span> <span class="na">class=</span><span class="s">"content"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;p&gt;&lt;strong&gt;</span>Scope<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>This file applies to the entire <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>hyphamind-site<span class="nt">&lt;/code&gt;</span> repo only. AGENTS.md is not global: each repo can have its own. Tools read AGENTS.md at the repo root (and nested folders) for that repo; files under <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>~/hyphaMind<span class="nt">&lt;/code&gt;</span> are not auto‑applied here.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Purpose<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Give humans and coding agents a crisp playbook for updating the website, triggering CI/CD, and coordinating with the <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>~/hyphaMind<span class="nt">&lt;/code&gt;</span> monorepo where the whitepaper and vNext docs live.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Local Dev<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Full Jekyll preview: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>bundle install<span class="nt">&lt;/code&gt;</span> then <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>bundle exec jekyll serve --livereload<span class="nt">&lt;/code&gt;</span> → http://localhost:4000<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Quick static peek (no Liquid): <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>python3 -m http.server 9001<span class="nt">&lt;/code&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Deployment (GitHub Pages)<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Workflow: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.github/workflows/pages.yml<span class="nt">&lt;/code&gt;</span> (Ruby 3.3 + Bundler cache → <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>bundle exec jekyll build<span class="nt">&lt;/code&gt;</span> → upload <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_site<span class="nt">&lt;/code&gt;</span> → <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>actions/deploy-pages@v4<span class="nt">&lt;/code&gt;</span>).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Trigger: push to <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>main<span class="nt">&lt;/code&gt;</span> (or manual run). Track with <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>gh run list<span class="nt">&lt;/code&gt;</span> / <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>gh run watch <span class="ni">&amp;lt;</span>id<span class="ni">&amp;gt;</span><span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>One‑time repo setting: Settings → Pages → Build and deployment = GitHub Actions. Custom domain = <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>hyphamind.ai<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>Notes<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Do not add <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>actions/configure-pages<span class="nt">&lt;/code&gt;</span> to this workflow; the default token cannot auto‑create the Pages site and will fail with <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>Resource not accessible by integration<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Bundler in this repo (Gemfile.lock → <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>BUNDLED WITH 2.7.2<span class="nt">&lt;/code&gt;</span>) requires Ruby ≥ 3.2. The workflow uses Ruby 3.3.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>You can re‑run a failed deploy with <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>gh run rerun <span class="ni">&amp;lt;</span>id<span class="ni">&amp;gt;</span><span class="nt">&lt;/code&gt;</span> after fixing settings/DNS.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>DNS For Custom Domain<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Keep <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>CNAME<span class="nt">&lt;/code&gt;</span> file at repo root: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>hyphamind.ai<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>At Namecheap, apex A records → <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>185.199.108.153<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>185.199.109.153<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>185.199.110.153<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>185.199.111.153<span class="nt">&lt;/code&gt;</span>. Optional <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>www<span class="nt">&lt;/code&gt;</span> CNAME → <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>mycol0g1cal.github.io<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>“NotServedByPagesError” or plain page = DNS or Pages not enabled; verify Settings → Pages shows green and re‑run deploy.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>Verification<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>dig +short hyphamind.ai<span class="nt">&lt;/code&gt;</span> → returns the four GitHub IPs.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>dig +short www.hyphamind.ai<span class="nt">&lt;/code&gt;</span> → returns <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>mycol0g1cal.github.io.<span class="nt">&lt;/code&gt;</span> (if <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>www<span class="nt">&lt;/code&gt;</span> configured).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>If <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>https://mycol0g1cal.github.io/hyphamind-site/<span class="nt">&lt;/code&gt;</span> looks correct but <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>https://hyphamind.ai/<span class="nt">&lt;/code&gt;</span> does not, custom domain isn’t attached yet or still propagating.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Site Structure<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_config.yml<span class="nt">&lt;/code&gt;</span> keys:
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>url: https://hyphamind.ai<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>baseurl: ""<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>community_url<span class="nt">&lt;/code&gt;</span>: external community (used by navbar when set).<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>whitepaper_url<span class="nt">&lt;/code&gt;</span>: canonical SoT for the whitepaper (GitHub blob link or site page). Prefer pin to tag/commit when locking.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Layouts and includes:
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_layouts/default.html<span class="nt">&lt;/code&gt;</span>: head/meta, navbar (Docs / Blog / Community / Philosophy / Whitepaper), `<span class="ni">&amp;lt;</span>section class="cta-whitepaper"<span class="ni">&amp;gt;</span><span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h2&gt;</span>Coherence Engine · Interop<span class="nt">&lt;/h2&gt;</span>
+  <span class="nt">&lt;p&gt;</span>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <span class="nt">&lt;strong&gt;</span>ECHO<span class="nt">&lt;/strong&gt;</span> → SPORE.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"btn btn-primary"</span> <span class="na">href=</span><span class="s">"https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md"</span><span class="nt">&gt;</span>Read the whitepaper<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+<span class="nt">&lt;p&gt;</span><span class="ni">&amp;lt;</span>/section<span class="ni">&amp;gt;</span><span class="nt">&lt;/p&gt;</span>
+
+<span class="nt">&lt;style&gt;</span>
+<span class="nc">.cta-whitepaper</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">2.5rem</span> <span class="m">0</span><span class="p">;</span> <span class="nl">border-top</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span> <span class="nl">border-bottom</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.cta-whitepaper</span> <span class="nc">.btn</span> <span class="p">{</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">0.6rem</span> <span class="m">1rem</span><span class="p">;</span> <span class="nl">text-decoration</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#222</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>` above footer.<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_includes/whitepaper_cta.html<span class="nt">&lt;/code&gt;</span>: CTA section with loop (includes ECHO).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_layouts/card.html<span class="nt">&lt;/code&gt;</span>: simple layout for card pages.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Content:
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>index.md<span class="nt">&lt;/code&gt;</span>: homepage (hero, loop pillars, roadmap). Do not add a root <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>index.html<span class="nt">&lt;/code&gt;</span>—it will override Jekyll and break styling.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs.md<span class="nt">&lt;/code&gt;</span>: Docs landing (links to monorepo Quickstart + vNext trailhead + whitepaper).<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>cards/*.md<span class="nt">&lt;/code&gt;</span>: Four cards scaffolded (About Founder, Personal Ethos, Labs, Contact).<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>assets/css/styles.css<span class="nt">&lt;/code&gt;</span>: site styles and tokens; use <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>| relative_url<span class="nt">&lt;/code&gt;</span> for paths.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>Duplicate files caveat<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Historical static <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.html<span class="nt">&lt;/code&gt;</span> files at repo root can shadow Jekyll pages and carry stale nav/markup. Prefer <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.md<span class="nt">&lt;/code&gt;</span> sources that use the shared layout. If a root <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.html<span class="nt">&lt;/code&gt;</span> duplicates a page that now exists as <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.md<span class="nt">&lt;/code&gt;</span>, delete the <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.html<span class="nt">&lt;/code&gt;</span> version to avoid inconsistent nav/styling (example: legacy <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>index.html<span class="nt">&lt;/code&gt;</span> was removed).<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Update Recipe<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Edit <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_config.yml:whitepaper_url<span class="nt">&lt;/code&gt;</span> when the SoT changes. Consider pinning to a tag/commit.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Refresh homepage copy in <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>index.md<span class="nt">&lt;/code&gt;</span> (keep the loop with ECHO).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Update <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs.md<span class="nt">&lt;/code&gt;</span> links to monorepo anchors.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Paste finalized card copy into <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>cards/*.md<span class="nt">&lt;/code&gt;</span> (keep <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>layout: card<span class="nt">&lt;/code&gt;</span>).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Preview locally, then push to <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>main<span class="nt">&lt;/code&gt;</span> to deploy.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Acceptance Checklist<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Navbar shows Docs / Blog / Community / Philosophy / Whitepaper.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>CTA renders above footer; whitepaper link resolves.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Homepage shows ROOT → … → ECHO → SPORE loop.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Four cards render under <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>/cards/*<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>bundle exec jekyll build<span class="nt">&lt;/code&gt;</span> clean (no Liquid errors).<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Troubleshooting<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Plain blue/white page: likely a stray <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>index.html<span class="nt">&lt;/code&gt;</span> overshadowing <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>index.md<span class="nt">&lt;/code&gt;</span> or CSS path not using <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>| relative_url<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Deploy 404 / NotFound creating deployment: enable Pages in repo settings; custom domain must be verified before deploy.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Custom domain shows “Site not found”: DNS not pointing at GitHub Pages yet or certificate not provisioned; verify A/CNAME records and re‑check Settings → Pages.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Absolute vs relative URLs: the layout uses absolute asset paths (<span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>/assets/...<span class="nt">&lt;/code&gt;</span>) paired with <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>site.url<span class="nt">&lt;/code&gt;</span> when needed. Keep <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_config.yml:url<span class="nt">&lt;/code&gt;</span> set to <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>https://hyphamind.ai<span class="nt">&lt;/code&gt;</span> and <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>baseurl: ""<span class="nt">&lt;/code&gt;</span>. For quick checks via the GitHub Pages domain, assets still resolve correctly because they’re absolute under that host.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Cross‑Talk With Monorepo (<span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>~/hyphaMind<span class="nt">&lt;/code&gt;</span>)<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Whitepaper SoT: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/whitepaper_vnext.md<span class="nt">&lt;/code&gt;</span> (linked via <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_config.yml:whitepaper_url<span class="nt">&lt;/code&gt;</span>).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Trailhead: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/README.md<span class="nt">&lt;/code&gt;</span> (linked from <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs.md<span class="nt">&lt;/code&gt;</span>).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Helpful anchors to cite from site content:
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/GLOSSARY.md<span class="nt">&lt;/code&gt;</span> — shared terminology.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/QUICKSTART.md<span class="nt">&lt;/code&gt;</span> — onboarding.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/PRIMITIVES.md<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/ROOT.md<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/ECHO.md<span class="nt">&lt;/code&gt;</span> — concept pages.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/ROADMAP.md<span class="nt">&lt;/code&gt;</span> — roadmap notes.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Cards source references: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/sites/website_cards_rollup_2025_10_30.md<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Ops note: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs/vnext/planning/email_protonmail_setup_hyphamind_ai.md<span class="nt">&lt;/code&gt;</span> (Proton Mail DNS).<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;</span>Pinning guidance<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>When linking the whitepaper from the site, prefer pinning to a tag or commit to avoid drift: e.g., <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>https://github.com/hyphamind-ai/hyphaMind/blob/v1.4.0-alpha/docs/vnext/whitepaper_vnext.md<span class="nt">&lt;/code&gt;</span> or <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.../blob/<span class="ni">&amp;lt;</span>commit<span class="ni">&amp;gt;</span>/...<span class="nt">&lt;/code&gt;</span>. Update <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_config.yml:whitepaper_url<span class="nt">&lt;/code&gt;</span> accordingly when you roll SoT.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Style <span class="ni">&amp;amp;</span> Linking Guidance<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Use short, concrete copy; prefer stable permalinks into monorepo (tag/commit) when citing SoT.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>When adding links in site markdown: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>/path/<span class="nt">&lt;/code&gt;</span> for internal, full <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>https://github.com/...<span class="nt">&lt;/code&gt;</span> for external.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Owners<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Content owner: HyphaEye<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Code owner: Site Coder<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;hr</span> <span class="nt">/&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Working Rhythm (Nuance borrowed from hyphaMind AGENTS.md)<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Status pulses: for multi‑step work, send brief preambles before commands and quick progress pulses every few minutes when long tasks run (builds, DNS propagation checks). Avoid silent hangs.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Mini‑plan: outline a short, verifiable step list, then mark completion as you go. Favor small PRs.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Roadmap snapshot: when website work maps to vNext items, reference <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>~/hyphaMind/docs/vnext/ROADMAP.md<span class="nt">&lt;/code&gt;</span> in commit/PR descriptions using concise labels (e.g., <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs(site): navbar + CTA aligns with vNext loop<span class="nt">&lt;/code&gt;</span>).<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Trail notes (optional): if the session creates reusable guidance, add a dated note under <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>~/hyphaMind/docs/vnext/trailnotes/<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Commit/PR Conventions<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Prefer semantic titles (even if this repo doesn’t enforce semantic‑pr):
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>docs(site): hero + CTA<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>ci(pages): ruby 3.3<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>chore(cards): add founder copy<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>style(css): polish navbar<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Keep diffs surgical; do not commit <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>_site/<span class="nt">&lt;/code&gt;</span> or local caches. Use <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>.jekyll-cache/.gitkeep<span class="nt">&lt;/code&gt;</span> only to trigger builds when needed.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Operational Quick Commands<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Trigger/inspect deploys: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>gh run list<span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>gh run watch <span class="ni">&amp;lt;</span>id<span class="ni">&amp;gt;</span><span class="nt">&lt;/code&gt;</span>, <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>gh run view <span class="ni">&amp;lt;</span>id<span class="ni">&amp;gt;</span> --log<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>DNS sanity (after edits at Namecheap):
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>dig +short hyphamind.ai<span class="nt">&lt;/code&gt;</span> → should return GitHub Pages IPs.<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>dig +short www.hyphamind.ai<span class="nt">&lt;/code&gt;</span> → should CNAME to <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>mycol0g1cal.github.io<span class="nt">&lt;/code&gt;</span> (if <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>www<span class="nt">&lt;/code&gt;</span> used).<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+  <span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+<span class="nt">&lt;p&gt;&lt;strong&gt;</span>Invariants (content idiom)<span class="nt">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;ul&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Keep the canonical loop with ECHO: <span class="nt">&lt;code</span> <span class="na">class=</span><span class="s">"language-plaintext highlighter-rouge"</span><span class="nt">&gt;</span>ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE<span class="nt">&lt;/code&gt;</span>.<span class="nt">&lt;/li&gt;</span>
+  <span class="nt">&lt;li&gt;</span>Whitepaper CTA present on pages using the default layout; navbar exposes Docs / Blog / Community / Philosophy / Whitepaper.<span class="nt">&lt;/li&gt;</span>
+<span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;/article&gt;</span>
+  <span class="nt">&lt;/main&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p>Now add four cards under <code class="language-plaintext highlighter-rouge">cards/</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">cards/about-founder.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cards/personal-ethos.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cards/labs.md</code></li>
+  <li><code class="language-plaintext highlighter-rouge">cards/contact.md</code></li>
+</ul>
+
+<p>Use this front‑matter for each:</p>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">card</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">About</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">Founder</span><span class="nv"> </span><span class="s">—</span><span class="nv"> </span><span class="s">Dr.</span><span class="nv"> </span><span class="s">Michael</span><span class="nv"> </span><span class="s">J.</span><span class="nv"> </span><span class="s">Shreve"</span>  <span class="c1"># adapt per file</span>
+<span class="na">summary</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Environmental</span><span class="nv"> </span><span class="s">engineer</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">systems</span><span class="nv"> </span><span class="s">designer;</span><span class="nv"> </span><span class="s">HyphaMind</span><span class="nv"> </span><span class="s">Labs</span><span class="nv"> </span><span class="s">founder;</span><span class="nv"> </span><span class="s">wastewater</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">multi‑omics</span><span class="nv"> </span><span class="s">+</span><span class="nv"> </span><span class="s">ethical</span><span class="nv"> </span><span class="s">co‑creation."</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/cards/about-founder/</span>
+<span class="nn">---</span>
+
+<span class="c">&lt;!-- Body content goes here (copy from monorepo's website_cards_rollup source) --&gt;</span>
+</code></pre></div></div>
+
+<p>Paste the body blocks from the <strong>website_cards_rollup</strong> (see monorepo) into each card. Adjust slugs as needed.</p>
+
+<hr />
+
+<h2 id="8-blog--community-stubs-optional-quick-win">8) Blog &amp; Community stubs (optional quick win)</h2>
+<ul>
+  <li>Ensure <code class="language-plaintext highlighter-rouge">/blog/</code> lists posts from <code class="language-plaintext highlighter-rouge">_posts/</code> (default Jekyll behavior).</li>
+  <li>If <code class="language-plaintext highlighter-rouge">community_url</code> is set, the navbar “Community” points off‑site; otherwise maintain a <code class="language-plaintext highlighter-rouge">/community/</code> page with a short blurb.</li>
+</ul>
+
+<hr />
+
+<h2 id="9-whitepaper-page-optional">9) Whitepaper page (optional)</h2>
+<p>If you prefer on‑site hosting, add <code class="language-plaintext highlighter-rouge">whitepaper.md</code> and either:</p>
+<ul>
+  <li>link to the GitHub whitepaper (monorepo), or</li>
+  <li>embed a built HTML export (manual for now).</li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">default</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">Whitepaper — Coherence Engine · Interop</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/whitepaper/</span>
+<span class="nn">---</span>
+
+Read the living whitepaper on GitHub:
+<span class="p">-</span> https://github.com/hyphamind-ai/hyphaMind/blob/main/docs/vnext/WHITEPAPER.md
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="10-styles-light-polish-optional">10) Styles: light polish (optional)</h2>
+<p><strong>File:</strong> <code class="language-plaintext highlighter-rouge">assets/site.css</code></p>
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.container</span> <span class="p">{</span> <span class="nl">max-width</span><span class="p">:</span> <span class="m">760px</span><span class="p">;</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="nb">auto</span><span class="p">;</span> <span class="nl">padding</span><span class="p">:</span> <span class="m">1.25rem</span><span class="p">;</span> <span class="p">}</span>
+<span class="nt">h1</span><span class="o">,</span> <span class="nt">h2</span><span class="o">,</span> <span class="nt">h3</span> <span class="p">{</span> <span class="nl">line-height</span><span class="p">:</span> <span class="m">1.25</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.summary</span> <span class="p">{</span> <span class="nl">color</span><span class="p">:</span> <span class="m">#444</span><span class="p">;</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.card</span> <span class="nt">article</span><span class="nc">.content</span> <span class="p">{</span> <span class="nl">margin-top</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.nav</span> <span class="nt">a</span> <span class="p">{</span> <span class="nl">margin-right</span><span class="p">:</span> <span class="m">0.75rem</span><span class="p">;</span> <span class="p">}</span>
+<span class="nc">.btn</span> <span class="p">{</span> <span class="nl">display</span><span class="p">:</span> <span class="n">inline-block</span><span class="p">;</span> <span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="11-deployment--domain-check">11) Deployment &amp; domain check</h2>
+<ul>
+  <li>GitHub Pages workflow is present; no changes required.</li>
+  <li>Ensure repository <strong>Pages</strong> settings read from <strong>GitHub Actions</strong>; public URL should match <code class="language-plaintext highlighter-rouge">_config.yml:url</code>.</li>
+  <li>Commit a <code class="language-plaintext highlighter-rouge">CNAME</code> file at repo root if using a custom domain (the Action respects it).</li>
+</ul>
+
+<hr />
+
+<h2 id="12-acceptance-checklist-site-coder">12) Acceptance checklist (site coder)</h2>
+<ul class="task-list">
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Homepage shows loop with <strong>ECHO</strong> and links to the whitepaper.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="language-plaintext highlighter-rouge">_config.yml</code> includes <code class="language-plaintext highlighter-rouge">community_url</code> and <code class="language-plaintext highlighter-rouge">whitepaper_url</code>.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Navbar exposes <strong>Docs / Blog / Community / Whitepaper</strong>.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="language-plaintext highlighter-rouge">whitepaper_cta.html</code> renders on pages using the default layout.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />Four cards render and are reachable under <code class="language-plaintext highlighter-rouge">/cards/*</code>.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" /><code class="language-plaintext highlighter-rouge">docs.md</code> points to monorepo Docs vNext and quickstart.</li>
+  <li class="task-list-item"><input type="checkbox" class="task-list-item-checkbox" disabled="disabled" />No Liquid errors locally (<code class="language-plaintext highlighter-rouge">bundle exec jekyll serve</code> clean).</li>
+</ul>
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

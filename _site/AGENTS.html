@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>HyphaMind</title>
+  <meta name="description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/AGENTS.html" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/AGENTS.html" />
+  <meta property="og:title" content="HyphaMind" />
+  <meta property="og:description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HyphaMind" />
+  <meta name="twitter:description" content="HyphaMind: Composting for Cognitive Permaculture and Choral Emergence." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <p><strong>Scope</strong></p>
+<ul>
+  <li>This file applies to the entire <code class="language-plaintext highlighter-rouge">hyphamind-site</code> repo only. AGENTS.md is not global: each repo can have its own. Tools read AGENTS.md at the repo root (and nested folders) for that repo; files under <code class="language-plaintext highlighter-rouge">~/hyphaMind</code> are not auto‑applied here.</li>
+</ul>
+
+<p><strong>Purpose</strong></p>
+<ul>
+  <li>Give humans and coding agents a crisp playbook for updating the website, triggering CI/CD, and coordinating with the <code class="language-plaintext highlighter-rouge">~/hyphaMind</code> monorepo where the whitepaper and vNext docs live.</li>
+</ul>
+
+<p><strong>Local Dev</strong></p>
+<ul>
+  <li>Full Jekyll preview: <code class="language-plaintext highlighter-rouge">bundle install</code> then <code class="language-plaintext highlighter-rouge">bundle exec jekyll serve --livereload</code> → http://localhost:4000</li>
+  <li>Quick static peek (no Liquid): <code class="language-plaintext highlighter-rouge">python3 -m http.server 9001</code></li>
+</ul>
+
+<p><strong>Deployment (GitHub Pages)</strong></p>
+<ul>
+  <li>Workflow: <code class="language-plaintext highlighter-rouge">.github/workflows/pages.yml</code> (Ruby 3.3 + Bundler cache → <code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> → upload <code class="language-plaintext highlighter-rouge">_site</code> → <code class="language-plaintext highlighter-rouge">actions/deploy-pages@v4</code>).</li>
+  <li>Trigger: push to <code class="language-plaintext highlighter-rouge">main</code> (or manual run). Track with <code class="language-plaintext highlighter-rouge">gh run list</code> / <code class="language-plaintext highlighter-rouge">gh run watch &lt;id&gt;</code>.</li>
+  <li>One‑time repo setting: Settings → Pages → Build and deployment = GitHub Actions. Custom domain = <code class="language-plaintext highlighter-rouge">hyphamind.ai</code>.</li>
+</ul>
+
+<p>Notes</p>
+<ul>
+  <li>Do not add <code class="language-plaintext highlighter-rouge">actions/configure-pages</code> to this workflow; the default token cannot auto‑create the Pages site and will fail with <code class="language-plaintext highlighter-rouge">Resource not accessible by integration</code>.</li>
+  <li>Bundler in this repo (Gemfile.lock → <code class="language-plaintext highlighter-rouge">BUNDLED WITH 2.7.2</code>) requires Ruby ≥ 3.2. The workflow uses Ruby 3.3.</li>
+  <li>You can re‑run a failed deploy with <code class="language-plaintext highlighter-rouge">gh run rerun &lt;id&gt;</code> after fixing settings/DNS.</li>
+</ul>
+
+<p><strong>DNS For Custom Domain</strong></p>
+<ul>
+  <li>Keep <code class="language-plaintext highlighter-rouge">CNAME</code> file at repo root: <code class="language-plaintext highlighter-rouge">hyphamind.ai</code>.</li>
+  <li>At Namecheap, apex A records → <code class="language-plaintext highlighter-rouge">185.199.108.153</code>, <code class="language-plaintext highlighter-rouge">185.199.109.153</code>, <code class="language-plaintext highlighter-rouge">185.199.110.153</code>, <code class="language-plaintext highlighter-rouge">185.199.111.153</code>. Optional <code class="language-plaintext highlighter-rouge">www</code> CNAME → <code class="language-plaintext highlighter-rouge">mycol0g1cal.github.io</code>.</li>
+  <li>“NotServedByPagesError” or plain page = DNS or Pages not enabled; verify Settings → Pages shows green and re‑run deploy.</li>
+</ul>
+
+<p>Verification</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">dig +short hyphamind.ai</code> → returns the four GitHub IPs.</li>
+  <li><code class="language-plaintext highlighter-rouge">dig +short www.hyphamind.ai</code> → returns <code class="language-plaintext highlighter-rouge">mycol0g1cal.github.io.</code> (if <code class="language-plaintext highlighter-rouge">www</code> configured).</li>
+  <li>If <code class="language-plaintext highlighter-rouge">https://mycol0g1cal.github.io/hyphamind-site/</code> looks correct but <code class="language-plaintext highlighter-rouge">https://hyphamind.ai/</code> does not, custom domain isn’t attached yet or still propagating.</li>
+</ul>
+
+<p><strong>Site Structure</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_config.yml</code> keys:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">url: https://hyphamind.ai</code>, <code class="language-plaintext highlighter-rouge">baseurl: ""</code>.</li>
+      <li><code class="language-plaintext highlighter-rouge">community_url</code>: external community (used by navbar when set).</li>
+      <li><code class="language-plaintext highlighter-rouge">whitepaper_url</code>: canonical SoT for the whitepaper (GitHub blob link or site page). Prefer pin to tag/commit when locking.</li>
+    </ul>
+  </li>
+  <li>Layouts and includes:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">_layouts/default.html</code>: head/meta, navbar (Docs / Blog / Community / Philosophy / Whitepaper), `&lt;section class="cta-whitepaper"&gt;</li>
+    </ul>
+    <div class="container">
+  <h2>Coherence Engine · Interop</h2>
+  <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+  <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+</div>
+  </li>
+</ul>
+<p>&lt;/section&gt;</p>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+<p>` above footer.</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_includes/whitepaper_cta.html</code>: CTA section with loop (includes ECHO).</li>
+  <li><code class="language-plaintext highlighter-rouge">_layouts/card.html</code>: simple layout for card pages.</li>
+  <li>Content:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">index.md</code>: homepage (hero, loop pillars, roadmap). Do not add a root <code class="language-plaintext highlighter-rouge">index.html</code>—it will override Jekyll and break styling.</li>
+      <li><code class="language-plaintext highlighter-rouge">docs.md</code>: Docs landing (links to monorepo Quickstart + vNext trailhead + whitepaper).</li>
+      <li><code class="language-plaintext highlighter-rouge">cards/*.md</code>: Four cards scaffolded (About Founder, Personal Ethos, Labs, Contact).</li>
+      <li><code class="language-plaintext highlighter-rouge">assets/css/styles.css</code>: site styles and tokens; use <code class="language-plaintext highlighter-rouge">| relative_url</code> for paths.</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Duplicate files caveat</p>
+<ul>
+  <li>Historical static <code class="language-plaintext highlighter-rouge">.html</code> files at repo root can shadow Jekyll pages and carry stale nav/markup. Prefer <code class="language-plaintext highlighter-rouge">.md</code> sources that use the shared layout. If a root <code class="language-plaintext highlighter-rouge">.html</code> duplicates a page that now exists as <code class="language-plaintext highlighter-rouge">.md</code>, delete the <code class="language-plaintext highlighter-rouge">.html</code> version to avoid inconsistent nav/styling (example: legacy <code class="language-plaintext highlighter-rouge">index.html</code> was removed).</li>
+</ul>
+
+<p><strong>Update Recipe</strong></p>
+<ul>
+  <li>Edit <code class="language-plaintext highlighter-rouge">_config.yml:whitepaper_url</code> when the SoT changes. Consider pinning to a tag/commit.</li>
+  <li>Refresh homepage copy in <code class="language-plaintext highlighter-rouge">index.md</code> (keep the loop with ECHO).</li>
+  <li>Update <code class="language-plaintext highlighter-rouge">docs.md</code> links to monorepo anchors.</li>
+  <li>Paste finalized card copy into <code class="language-plaintext highlighter-rouge">cards/*.md</code> (keep <code class="language-plaintext highlighter-rouge">layout: card</code>).</li>
+  <li>Preview locally, then push to <code class="language-plaintext highlighter-rouge">main</code> to deploy.</li>
+</ul>
+
+<p><strong>Acceptance Checklist</strong></p>
+<ul>
+  <li>Navbar shows Docs / Blog / Community / Philosophy / Whitepaper.</li>
+  <li>CTA renders above footer; whitepaper link resolves.</li>
+  <li>Homepage shows ROOT → … → ECHO → SPORE loop.</li>
+  <li>Four cards render under <code class="language-plaintext highlighter-rouge">/cards/*</code>.</li>
+  <li><code class="language-plaintext highlighter-rouge">bundle exec jekyll build</code> clean (no Liquid errors).</li>
+</ul>
+
+<p><strong>Troubleshooting</strong></p>
+<ul>
+  <li>Plain blue/white page: likely a stray <code class="language-plaintext highlighter-rouge">index.html</code> overshadowing <code class="language-plaintext highlighter-rouge">index.md</code> or CSS path not using <code class="language-plaintext highlighter-rouge">| relative_url</code>.</li>
+  <li>Deploy 404 / NotFound creating deployment: enable Pages in repo settings; custom domain must be verified before deploy.</li>
+  <li>Custom domain shows “Site not found”: DNS not pointing at GitHub Pages yet or certificate not provisioned; verify A/CNAME records and re‑check Settings → Pages.</li>
+  <li>Absolute vs relative URLs: the layout uses absolute asset paths (<code class="language-plaintext highlighter-rouge">/assets/...</code>) paired with <code class="language-plaintext highlighter-rouge">site.url</code> when needed. Keep <code class="language-plaintext highlighter-rouge">_config.yml:url</code> set to <code class="language-plaintext highlighter-rouge">https://hyphamind.ai</code> and <code class="language-plaintext highlighter-rouge">baseurl: ""</code>. For quick checks via the GitHub Pages domain, assets still resolve correctly because they’re absolute under that host.</li>
+</ul>
+
+<p><strong>Cross‑Talk With Monorepo (<code class="language-plaintext highlighter-rouge">~/hyphaMind</code>)</strong></p>
+<ul>
+  <li>Whitepaper SoT: <code class="language-plaintext highlighter-rouge">docs/vnext/whitepaper_vnext.md</code> (linked via <code class="language-plaintext highlighter-rouge">_config.yml:whitepaper_url</code>).</li>
+  <li>Trailhead: <code class="language-plaintext highlighter-rouge">docs/vnext/README.md</code> (linked from <code class="language-plaintext highlighter-rouge">docs.md</code>).</li>
+  <li>Helpful anchors to cite from site content:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">docs/vnext/GLOSSARY.md</code> — shared terminology.</li>
+      <li><code class="language-plaintext highlighter-rouge">docs/vnext/QUICKSTART.md</code> — onboarding.</li>
+      <li><code class="language-plaintext highlighter-rouge">docs/vnext/PRIMITIVES.md</code>, <code class="language-plaintext highlighter-rouge">docs/vnext/ROOT.md</code>, <code class="language-plaintext highlighter-rouge">docs/vnext/ECHO.md</code> — concept pages.</li>
+      <li><code class="language-plaintext highlighter-rouge">docs/vnext/ROADMAP.md</code> — roadmap notes.</li>
+      <li>Cards source references: <code class="language-plaintext highlighter-rouge">docs/vnext/sites/website_cards_rollup_2025_10_30.md</code>.</li>
+    </ul>
+  </li>
+  <li>Ops note: <code class="language-plaintext highlighter-rouge">docs/vnext/planning/email_protonmail_setup_hyphamind_ai.md</code> (Proton Mail DNS).</li>
+</ul>
+
+<p>Pinning guidance</p>
+<ul>
+  <li>When linking the whitepaper from the site, prefer pinning to a tag or commit to avoid drift: e.g., <code class="language-plaintext highlighter-rouge">https://github.com/hyphamind-ai/hyphaMind/blob/v1.4.0-alpha/docs/vnext/whitepaper_vnext.md</code> or <code class="language-plaintext highlighter-rouge">.../blob/&lt;commit&gt;/...</code>. Update <code class="language-plaintext highlighter-rouge">_config.yml:whitepaper_url</code> accordingly when you roll SoT.</li>
+</ul>
+
+<p><strong>Style &amp; Linking Guidance</strong></p>
+<ul>
+  <li>Use short, concrete copy; prefer stable permalinks into monorepo (tag/commit) when citing SoT.</li>
+  <li>When adding links in site markdown: <code class="language-plaintext highlighter-rouge">/path/</code> for internal, full <code class="language-plaintext highlighter-rouge">https://github.com/...</code> for external.</li>
+</ul>
+
+<p><strong>Owners</strong></p>
+<ul>
+  <li>Content owner: HyphaEye</li>
+  <li>Code owner: Site Coder</li>
+</ul>
+
+<hr />
+
+<p><strong>Working Rhythm (Nuance borrowed from hyphaMind AGENTS.md)</strong></p>
+<ul>
+  <li>Status pulses: for multi‑step work, send brief preambles before commands and quick progress pulses every few minutes when long tasks run (builds, DNS propagation checks). Avoid silent hangs.</li>
+  <li>Mini‑plan: outline a short, verifiable step list, then mark completion as you go. Favor small PRs.</li>
+  <li>Roadmap snapshot: when website work maps to vNext items, reference <code class="language-plaintext highlighter-rouge">~/hyphaMind/docs/vnext/ROADMAP.md</code> in commit/PR descriptions using concise labels (e.g., <code class="language-plaintext highlighter-rouge">docs(site): navbar + CTA aligns with vNext loop</code>).</li>
+  <li>Trail notes (optional): if the session creates reusable guidance, add a dated note under <code class="language-plaintext highlighter-rouge">~/hyphaMind/docs/vnext/trailnotes/</code>.</li>
+</ul>
+
+<p><strong>Commit/PR Conventions</strong></p>
+<ul>
+  <li>Prefer semantic titles (even if this repo doesn’t enforce semantic‑pr):
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">docs(site): hero + CTA</code>, <code class="language-plaintext highlighter-rouge">ci(pages): ruby 3.3</code>, <code class="language-plaintext highlighter-rouge">chore(cards): add founder copy</code>, <code class="language-plaintext highlighter-rouge">style(css): polish navbar</code>.</li>
+    </ul>
+  </li>
+  <li>Keep diffs surgical; do not commit <code class="language-plaintext highlighter-rouge">_site/</code> or local caches. Use <code class="language-plaintext highlighter-rouge">.jekyll-cache/.gitkeep</code> only to trigger builds when needed.</li>
+</ul>
+
+<p><strong>Operational Quick Commands</strong></p>
+<ul>
+  <li>Trigger/inspect deploys: <code class="language-plaintext highlighter-rouge">gh run list</code>, <code class="language-plaintext highlighter-rouge">gh run watch &lt;id&gt;</code>, <code class="language-plaintext highlighter-rouge">gh run view &lt;id&gt; --log</code>.</li>
+  <li>DNS sanity (after edits at Namecheap):
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">dig +short hyphamind.ai</code> → should return GitHub Pages IPs.</li>
+      <li><code class="language-plaintext highlighter-rouge">dig +short www.hyphamind.ai</code> → should CNAME to <code class="language-plaintext highlighter-rouge">mycol0g1cal.github.io</code> (if <code class="language-plaintext highlighter-rouge">www</code> used).</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Invariants (content idiom)</strong></p>
+<ul>
+  <li>Keep the canonical loop with ECHO: <code class="language-plaintext highlighter-rouge">ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE</code>.</li>
+  <li>Whitepaper CTA present on pages using the default layout; navbar exposes Docs / Blog / Community / Philosophy / Whitepaper.</li>
+</ul>
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
