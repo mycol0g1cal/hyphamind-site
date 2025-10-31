@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Architecture</title>
+  <meta name="description" content="Metabolic loop and invariants." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/architecture/" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/architecture/" />
+  <meta property="og:title" content="Architecture" />
+  <meta property="og:description" content="Metabolic loop and invariants." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Architecture" />
+  <meta name="twitter:description" content="Metabolic loop and invariants." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="container">
+  <h1 class="mt-0">Metabolic loop overview</h1>
+  <p class="mt-1">HyphaMind’s metabolic loop enforces consent at each hop. The loop stitches technical enforcement with human‑readable receipts so audits are explainable.</p>
+  <pre><code>ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → SPORE → ROOT</code></pre>
+  <p>The loop is intentionally circular. SPORE exports close only when ROOT receipts are still valid and untouched. Every primitive enriches telemetry for the next stage, preventing unauthorised reach.</p>
+</section>
+
+<section class="container mt-2">
+  <h2 class="mt-0">Stage‑by‑stage commitments</h2>
+  <div class="card" data-accent="teal">
+    <h3 class="mt-0">ROOT</h3>
+    <p>The entry point anchors the run with <span class="code-inline">root.digest</span>, grants, and provenance seeds. Nothing else progresses without ROOT in place.</p>
+  </div>
+  <div class="card" data-accent="gold">
+    <h3 class="mt-0">VALVE</h3>
+    <p>VALVE evaluates policy, applies refusal codes, and records <span class="code-inline">valve_decision</span> and <span class="code-inline">policy.decision</span>. Denied spans never escape to CLASP.</p>
+  </div>
+  <div class="card" data-accent="amber">
+    <h3 class="mt-0">CLASP &amp; TRACE</h3>
+    <p>CLASP packages consent envelopes and maintains <span class="code-inline">consent_envelope_id</span>. TRACE emits spans that must include <span class="code-inline">trace_span_id</span> and root provenance.</p>
+  </div>
+  <div class="card" data-accent="teal">
+    <h3 class="mt-0">MIRE &amp; SCAR</h3>
+    <p>MIRE watches entropy and writes events whenever REFRAIN triggers. SCAR stamps compliance markers and ensures denials remain legible.</p>
+  </div>
+  <div class="card" data-accent="gold">
+    <h3 class="mt-0">COMPOST &amp; SPORE</h3>
+    <p>COMPOST stores immutable audit artifacts. SPORE exports only bundles that pass the consent policy checks and provenance integrity tests.</p>
+  </div>
+</section>
+
+<section class="container mt-2">
+  <h2 class="mt-0">Invariant guardrails</h2>
+  <ul class="checklist">
+    <li><strong>ROOT before reach</strong> — CLASP and TRACE reject spans without a valid ROOT digest in scope.</li>
+    <li><strong>Refusal clarity</strong> — VALVE must return human‑readable refusal codes whenever policy denies a span.</li>
+    <li><strong>SPORE exports</strong> — require provenance completion and, when public, C2PA manifests.</li>
+    <li><strong>Loop closure</strong> — ROOT revalidates exported bundles before the run is marked complete.</li>
+  </ul>
+</section>
+
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

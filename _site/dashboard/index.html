@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Dashboard</title>
+  <meta name="description" content="Demo consent-first dashboard reading a geometry map." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/dashboard/" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/dashboard/" />
+  <meta property="og:title" content="Dashboard" />
+  <meta property="og:description" content="Demo consent-first dashboard reading a geometry map." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dashboard" />
+  <meta name="twitter:description" content="Demo consent-first dashboard reading a geometry map." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="container">
+  <h1 class="mt-0">Consent‑first dashboard</h1>
+  <p class="mt-1">This page loads <span class="code-inline">data/cart_geometry_map.json</span>, visualises the metabolic loop, and highlights entropy measured by EYE.</p>
+  <div class="card" data-accent="teal" id="dashboard-status">Loading demo geometry…</div>
+</section>
+
+<section class="container dashboard-grid mt-2">
+  <section class="dashboard-list" id="nodes-list">
+    <h3>Nodes</h3>
+    <ul></ul>
+  </section>
+  <section class="dashboard-list" id="edges-list">
+    <h3>Edges</h3>
+    <ul></ul>
+  </section>
+</section>
+
+<section class="container mt-2">
+  <div class="card" data-accent="gold">
+    <h3 class="mt-0">Metrics</h3>
+    <div class="flex flex-column flex-auto" id="metrics"></div>
+  </div>
+</section>
+
+<section class="container mt-2">
+  <div class="card" data-accent="amber">
+    <h3 class="mt-0">Evidence paths</h3>
+    <pre id="evidence-paths">(loading…)</pre>
+  </div>
+</section>
+
+<script src="/assets/js/main.js"></script>
+
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>API</title>
+  <meta name="description" content="Minimal operator-facing API surface with consent receipts." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/api/" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/api/" />
+  <meta property="og:title" content="API" />
+  <meta property="og:description" content="Minimal operator-facing API surface with consent receipts." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="API" />
+  <meta name="twitter:description" content="Minimal operator-facing API surface with consent receipts." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="container">
+  <h1 class="mt-0">Routes</h1>
+  <p class="mt-1">HyphaMind exposes a minimal API surface aimed at operators and orchestrators. Every route expects consent receipts in headers and payloads.</p>
+  <div class="card table-card" data-accent="teal">
+    <table>
+      <thead>
+        <tr><th>Route</th><th>Description</th><th>Notes</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="code-inline">POST /chorus/storm/run</span></td>
+          <td>Start a Chorus‑managed run with ROOT receipts.</td>
+          <td>Requires <span class="code-inline">root.digest</span> and <span class="code-inline">consent_envelope_id</span>.</td>
+        </tr>
+        <tr>
+          <td><span class="code-inline">POST /chorus/eye/refrain</span></td>
+          <td>Manually trigger a REFRAIN pause with operator note.</td>
+          <td>ECE threshold optional; defaults to 0.08.</td>
+        </tr>
+        <tr>
+          <td><span class="code-inline">POST /chorus/cart/query</span></td>
+          <td>Query cart geometry and evidence paths.</td>
+          <td>Only SPORE‑vetted nodes are returned.</td>
+        </tr>
+        <tr>
+          <td><span class="code-inline">POST /chorus/bard/brief</span></td>
+          <td>Generate a human‑readable briefing for auditors.</td>
+          <td>Requires SCAR marker and operator note.</td>
+        </tr>
+        <tr>
+          <td><span class="code-inline">POST /chorus/song/state</span></td>
+          <td>Retrieve current run state, including REFRAIN status.</td>
+          <td>Includes policy latency and consent coverage metrics.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="container mt-2">
+  <h2 class="mt-0">VALVE guard pseudocode</h2>
+  <div class="card" data-accent="gold">
+<pre><code>def valve_guard(request):
+    envelope = request.json
+    required = ["consent_envelope_id", "trace_span_id", "root.digest"]
+    for field in required:
+        if field not in envelope or not envelope[field]:
+            raise Refusal(code="VALVE.MISSING_FIELD",
+                          reason=f"{field} required before reach")
+
+    if envelope.get("export.intent") == "public" and not envelope.get("c2pa.manifest"):
+        raise Refusal(code="VALVE.MISSING_C2PA",
+                      reason="Public exports require C2PA manifest")
+
+    if not envelope.get("trace_span_id").startswith("trace-"):
+        raise Refusal(code="VALVE.BAD_TRACE", reason="Trace ID malformed")
+
+    return allow()
+</code></pre>
+    <p class="small">VALVE never forwards envelopes without consent receipts or traceability. Public exports also require a valid C2PA manifest, enforcing authenticity at the edge.</p>
+  </div>
+</section>
+
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

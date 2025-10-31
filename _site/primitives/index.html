@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Primitives</title>
+  <meta name="description" content="Primitive invariants and required spans." />
+
+  <!-- Icons & Social -->
+  <link rel="icon" href="/assets/img/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon.ico" />
+  <link rel="mask-icon" href="/assets/logo.svg" color="#2d7f79" />
+  <link rel="canonical" href="https://hyphamind.ai/primitives/" />
+  <meta property="og:site_name" content="HyphaMind" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hyphamind.ai/primitives/" />
+  <meta property="og:title" content="Primitives" />
+  <meta property="og:description" content="Primitive invariants and required spans." />
+  <meta property="og:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Primitives" />
+  <meta name="twitter:description" content="Primitive invariants and required spans." />
+  <meta name="twitter:image" content="https://hyphamind.ai/assets/logo.svg" />
+  <meta name="theme-color" content="#2d7f79" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+<body class="bg-neuro">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="inner">
+      <a class="brand" href="/">
+        <img src="/assets/logo.svg" alt="HyphaMind logo" />
+        <span>HyphaMind</span><span class="dot"></span>
+      </a>
+
+      <nav aria-label="primary">
+        <a class="btn btn-outline" href="/docs/" >Docs</a>
+        <a class="btn btn-outline" href="/blog/" >Blog</a>
+        <a class="btn btn-outline" href="https://community.hyphamind.ai" rel="noopener">Web</a>
+        <a class="btn btn-primary glow" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Philosophy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="container">
+  <h1 class="mt-0">Primitives and required spans</h1>
+  <p class="mt-1">HyphaMind v1.1 defines required span attributes for each primitive. If a span lacks the required fields, REFRAIN pauses and VALVE refuses additional reach.</p>
+  <div class="card table-card" data-accent="teal">
+    <table>
+      <caption>Primitive invariants (v1.1)</caption>
+      <thead>
+        <tr><th>Primitive</th><th>Purpose</th><th>Artifacts</th><th>Required Span Fields</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>ROOT</td><td>Seed run with provenance anchor and grants.</td><td><span class="code-inline">root.digest</span>, <span class="code-inline">grants.network[]</span></td><td><span class="code-inline">root.digest</span>, <span class="code-inline">purpose.of.use</span></td></tr>
+        <tr><td>VALVE</td><td>Policy enforcement and refusal codes.</td><td><span class="code-inline">valve_decision</span>, <span class="code-inline">policy.decision</span></td><td><span class="code-inline">valve_decision</span>, <span class="code-inline">policy.decision</span>, <span class="code-inline">consent.scope</span></td></tr>
+        <tr><td>CLASP</td><td>Bind consent envelopes to spans.</td><td><span class="code-inline">consent_envelope_id</span></td><td><span class="code-inline">consent_envelope_id</span>, <span class="code-inline">consent.terms.version</span></td></tr>
+        <tr><td>TRACE</td><td>Propagate verifiable span metadata.</td><td><span class="code-inline">trace_span_id</span>, <span class="code-inline">trace.parent_id</span></td><td><span class="code-inline">trace_span_id</span>, <span class="code-inline">root.digest</span>, <span class="code-inline">consent_envelope_id</span></td></tr>
+        <tr><td>MIRE</td><td>Emit events when entropy breaks tolerances.</td><td><span class="code-inline">mire_event</span>, <span class="code-inline">entropy.measure</span></td><td><span class="code-inline">entropy.measure</span>, <span class="code-inline">risk.level</span>, <span class="code-inline">trace_span_id</span></td></tr>
+        <tr><td>SCAR</td><td>Attach compliance marker and refusal clarity.</td><td><span class="code-inline">scar.marker</span>, <span class="code-inline">refusal.code</span></td><td><span class="code-inline">scar.marker</span>, <span class="code-inline">policy.decision</span>, <span class="code-inline">operator.note</span></td></tr>
+        <tr><td>COMPOST</td><td>Persist immutable receipts and audit history.</td><td><span class="code-inline">compost.bundle</span></td><td><span class="code-inline">compost.bundle</span>, <span class="code-inline">retention.clock</span></td></tr>
+        <tr><td>SPORE</td><td>Export vetted bundles to downstream consumers.</td><td><span class="code-inline">spore.hash</span>, <span class="code-inline">export.path</span></td><td><span class="code-inline">spore.hash</span>, <span class="code-inline">root.digest</span>, <span class="code-inline">consent.receipt.hash</span></td></tr>
+        <tr><td>REFRAIN</td><td>Pause flows when consent drift exceeds tolerance.</td><td><span class="code-inline">refrain.trigger</span>, <span class="code-inline">ece.score</span></td><td><span class="code-inline">ece.score</span>, <span class="code-inline">mire_event.id</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="small">If any primitive misses its required fields, REFRAIN raises a pause, VALVE responds with a refusal code, and SPORE is prevented from exporting the bundle.</p>
+</section>
+
+
+  </main>
+
+  <section class="cta-whitepaper">
+  <div class="container">
+    <h2>Coherence Engine · Interop</h2>
+    <p>Our whitepaper: ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → <strong>ECHO</strong> → SPORE.</p>
+    <a class="btn btn-primary" href="https://github.com/hyphamind-ai/hyphaMind/blob/1722dfa36f3bb6a53bd4342606dfedb4a426bfc8/docs/vnext/whitepaper_vnext.md">Read the whitepaper</a>
+  </div>
+</section>
+
+<style>
+.cta-whitepaper { padding: 2.5rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+.cta-whitepaper .btn { padding: 0.6rem 1rem; text-decoration: none; border: 1px solid #222; }
+</style>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container">
+      <p class="mt-1">© <span id="year"></span> HyphaMind, LLC. All rights reserved. <span class="small">Powered by HyphaMind™</span></p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
