@@ -31,7 +31,8 @@ permalink: /docs/
 
   <h2 class="mt-2">References</h2>
   <ul>
-    <li>Whitepaper (SoT): {{ site.whitepaper_url | default: '/whitepaper/' }}</li>
+    <li>Whitepaper (SoT): {{ site.whitepaper_url }}</li>
+    <li>Local snapshot: <a href="{{ '/whitepaper/' | relative_url }}">/whitepaper/</a></li>
     <li>API &amp; Guides live in the monorepo; public snapshots land here as they stabilize.</li>
   </ul>
 </section>
