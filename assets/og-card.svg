@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1113"/>
+      <stop offset="100%" stop-color="#152223"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <g opacity="0.08">
+    <circle cx="220" cy="120" r="180" fill="#d9a441"/>
+    <circle cx="980" cy="520" r="220" fill="#2d7f79"/>
+  </g>
+  <g>
+    <text x="80" y="300" fill="#ffffff" font-family="Poppins, Inter, Arial, sans-serif" font-weight="800" font-size="70">HyphaMind</text>
+    <text x="80" y="380" fill="#d9a441" font-family="Inter, Arial, sans-serif" font-weight="700" font-size="44">Coherence Engine</text>
+    <text x="80" y="440" fill="#cbd5d1" font-family="Inter, Arial, sans-serif" font-weight="400" font-size="28">ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE</text>
+  </g>
+  <image href="/assets/logo.svg" x="980" y="40" height="120" width="120"/>
+</svg>

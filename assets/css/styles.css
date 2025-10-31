@@ -90,7 +90,7 @@ body {
 .container {
   max-width: var(--max-width);
   margin-inline: auto;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1.5rem; /* add slight left/right breathing room */
 }
 
 /* ===== Headings ===== */
