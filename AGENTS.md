@@ -4,6 +4,22 @@
 **Purpose**
 - Give humans and coding agents a crisp playbook for updating the website, triggering CI/CD, and coordinating with the `~/hyphaMind` monorepo where the whitepaper and vNext docs live.
 
+**Double-Touch Protocol (Reciprocal)**
+- Anytime you edit this file, append the matching guidance under `~/hyphaMind/AGENTS.md` in the “Website Double-Touch” section during the same session; the two files travel in lockstep so collaborators always see the latest rails from either repo.
+- Note the change (date + short clause) in the commit message or session notes so downstream reviewers can trace which repo touched the protocol.
+- If the change spawns new docs or rituals, list their relative paths here and mirror that list in the monorepo entry.
+
+**Collaborator Quickstart — libbyc0d3x**
+- Primary onboarding doc: `docs/libbyc0d3x_onboarding.md` (kept human-friendly; update alongside this file when workflows shift).
+- Default workspace handoff: clone the repo, read this file, skim the onboarding doc, then check `WEBROADMAP.md` and `MINIMAP.md` for the active five-slot queue before starting work.
+- For questions that span repos, open a short trail note in `~/hyphaMind/docs/vnext/trailnotes/` referencing the slice you are shipping.
+
+**Roadmap ↔ Minimap Ritual**
+- `WEBROADMAP.md` stores the thematic arcs, decisions, and acceptance gates; `MINIMAP.md` carries the active five-slot queue reflected in commits/PRs.
+- Before starting a slice: confirm the target row in `MINIMAP.md`, cross-reference the linked bullet in `WEBROADMAP.md`, and record the intended acceptance criteria in your branch/PR description.
+- After shipping: update both docs in the same PR (or follow-up commit) so the queue advances—move the shipped item into the “Done” lane in `MINIMAP.md`, adjust the roadmap bullet if the decision shifted, and cite related hyphaMind roadmap anchors when relevant.
+- When a new initiative appears in `~/hyphaMind/docs/vnext/ROADMAP.md`, add/adjust the matching entry in `WEBROADMAP.md` and note the linkage under “Roadmap Sync” in the onboarding doc.
+
 **Local Dev**
 - Full Jekyll preview: `bundle install` then `bundle exec jekyll serve --livereload` → http://localhost:4000
 - Quick static peek (no Liquid): `python3 -m http.server 9001`
@@ -107,6 +123,32 @@ Pinning guidance
   - `dig +short hyphamind.ai` → should return GitHub Pages IPs.
   - `dig +short www.hyphamind.ai` → should CNAME to `mycol0g1cal.github.io` (if `www` used).
 
+**CI Coaching Notes (for libbyc0d3x)**
+- Present workflow: `.github/workflows/pages.yml` runs on push to `main`; steps = set up Ruby 3.3 → install gems via cached Bundler → `bundle exec jekyll build` → deploy with `actions/deploy-pages@v4`.
+- To inspect a failed run: `gh run list --workflow pages.yml` → `gh run view <id> --log`. Check `bundle exec jekyll build` logs first (Liquid errors, missing includes) before touching deployment settings.
+- Enhancements under evaluation: add an optional lint matrix (`bundle exec rubocop` and `npx stylelint`) guarded behind `workflow_dispatch` inputs; surface a job summary artifact that links to preview builds (`actions/upload-artifact` with `_site` zipped) for review before production release.
+- Keep secrets out of the pipeline; GitHub Pages uses the default `GITHUB_TOKEN`, so no PATs needed. If preview artifacts are added, ensure they expire quickly (`retention-days: 3`) and never contain `.jekyll-cache`.
+
 **Invariants (content idiom)**
 - Keep the canonical loop with ECHO: `ROOT → VALVE → CLASP → TRACE → MIRE → SCAR → COMPOST → ECHO → SPORE`.
 - Whitepaper CTA present on pages using the default layout; navbar exposes Docs / Blog / Community / Philosophy / Whitepaper.
+
+---
+
+**Dual‑Repo Sync Playbook (Monorepo ↔ Site)**
+- Source of truth lives in `~/hyphaMind` (whitepaper and vNext docs). The site mirrors stable links and copy.
+- Whitepaper pin:
+  - Find latest commit touching `docs/vnext/whitepaper_vnext.md`:
+    - `gh api repos/hyphamind-ai/hyphaMind/commits -f path=docs/vnext/whitepaper_vnext.md -f sha=main -f per_page=1 | jq -r '.[0].sha'`
+  - Update `_config.yml:whitepaper_url` to the pinned commit URL.
+  - Commit to `main` → deploy runs.
+- Copy updates (cards/home/docs):
+  - Prefer editing in this repo. If sourcing from monorepo docs (e.g., cards rollup), paste and adapt; avoid deep coupling.
+- Nav + labels:
+  - Keep Docs / Blog / Web / Philosophy. “Philosophy” should always point to the pinned whitepaper URL.
+
+**Resume Checklist (either repo)**
+- List recent work: `git log --oneline -n 10`; open PRs: `gh pr list`.
+- Site deploy status: `gh run list` (look for “Deploy static site”) then `gh run view <id> --log`.
+- Local smoke: `bundle exec jekyll build`.
+- Domain health (site): `dig +short hyphamind.ai` (four GitHub IPs), `dig +short www.hyphamind.ai` (CNAME to `mycol0g1cal.github.io`).
